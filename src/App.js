@@ -1,18 +1,25 @@
 
 import './App.css';
+import Body from './Body.js';
 
 function App() {
   return (
     <div>
-      <nav>
-           HEADER
-      </nav>
+
+      <header>
+           <div className='App-header'>
+              Header
+           </div>
+      </header>
+
       <body>
-          BODY
+          <Body/>
       </body>
+
       <footer>
-        Footer
+        
       </footer>
+      
     </div>
   );
 }

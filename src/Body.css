@@ -1,0 +1,8 @@
+.Body {
+  background-color: #252935;
+  color: white;
+  min-height: 95vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
