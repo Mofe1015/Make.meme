@@ -13,11 +13,24 @@
   padding: 2px;
   width: 4%;
   max-width: 4%;
+  max-height: 100%;
 }
 .body-Body {
   padding: 2px;
   width: 97%;
   max-width: 97%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.edit-Box-Div {
+  background-color: white;
+  height: 40vw;
+  width: 40vw;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 .body-Nav-Btn {
   margin: auto;
@@ -68,6 +81,13 @@
     background-color: #252935;
     height: 90vh;
     min-height: 85vh;
+  }
+  .edit-Box-Div {
+    background-color: white;
+    height: 90vw;
+    width: 90vw;
+    margin-top: auto;
+    margin-bottom: auto;
   }
 
   .body-Nav {

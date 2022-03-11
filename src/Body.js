@@ -25,7 +25,9 @@ function Body (){
                 
             </nav>
             <div className='body-Body'>
-                bodyy
+                <div className='edit-Box-Div'>
+
+                </div>               
             </div>
         </div>
     )
