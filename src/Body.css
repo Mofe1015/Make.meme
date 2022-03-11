@@ -5,6 +5,7 @@
   max-height: 95vh;
   max-width: 100%;
   display: flex;
+  flex-direction: row;
 }
 .body-Nav {
   display: flex;
@@ -12,7 +13,6 @@
   padding: 2px;
   width: 4%;
   max-width: 4%;
-  overflow: hidden;
 }
 .body-Body {
   padding: 2px;
@@ -50,4 +50,32 @@
   margin-right: auto;
   margin-bottom: auto;
   font-size: 1.5vh;
+}
+
+@media only screen and (max-width: 700px) {
+  .Body {
+    background-color: green;
+    display: flex;
+    flex-direction: column-reverse;
+    overflow: hidden;
+  }
+  .body-Body {
+    align-self: flex-end;
+    padding: 2px;
+    width: 100%;
+    max-width: 100%;
+    color: black;
+    background-color: #252935;
+    height: 90vh;
+    min-height: 85vh;
+  }
+
+  .body-Nav {
+    flex-direction: row;
+    width: 100%;
+    max-width: 100%;
+    background-color: #252935;
+    height: 6vh;
+    min-height: 6vh;
+  }
 }
