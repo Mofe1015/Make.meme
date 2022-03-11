@@ -20,8 +20,7 @@
   max-width: 97%;
 }
 .body-Nav-Btn {
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
   display: flex;
   flex-direction: column;
   align-content: center;

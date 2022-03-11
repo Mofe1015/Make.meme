@@ -1,7 +1,10 @@
 import './Body.css';
 import { FaImages } from "react-icons/fa";
+import { GoTextSize } from "react-icons/go";
+import { BsThreeDots } from "react-icons/bs";
 
 function Body (){
+    
     return(
         <div className='Body'>
             <nav className='body-Nav'>
@@ -9,11 +12,21 @@ function Body (){
                     <FaImages className='boby-Nav-icon'/>
                     <p>Images</p>
                 </button>
+
+                <button className='body-Nav-Btn'>
+                    <GoTextSize className='boby-Nav-icon'/>
+                    <p>Text</p>
+                </button>
+
+                <button className='body-Nav-Btn'>
+                    <BsThreeDots className='boby-Nav-icon'/>
+                    <p>More</p>
+                </button>
                 
             </nav>
-            <body className='body-Body'>
+            <div className='body-Body'>
                 bodyy
-            </body>
+            </div>
         </div>
     )
 };
