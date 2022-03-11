@@ -7,14 +7,48 @@
   display: flex;
 }
 .body-Nav {
+  display: flex;
+  flex-direction: column;
   padding: 2px;
-  background-color: green;
-  width: 3%;
-  max-width: 3%;
+  width: 4%;
+  max-width: 4%;
+  overflow: hidden;
 }
 .body-Body {
   padding: 2px;
-  background-color: aqua;
   width: 97%;
   max-width: 97%;
+}
+.body-Nav-Btn {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+}
+.body-Nav-Btn:hover {
+  background-color: rgba(255, 255, 255, 0.103);
+  border-radius: 50%;
+}
+
+.boby-Nav-icon {
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+}
+
+.body-Nav-Btn > p {
+  color: white;
+  padding: 0;
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+  font-size: 1.5vh;
 }
