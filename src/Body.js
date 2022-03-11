@@ -3,7 +3,12 @@ import './Body.css';
 function Body (){
     return(
         <div className='Body'>
-            body working
+            <nav className='body-Nav'>
+                mofee
+            </nav>
+            <body className='body-Body'>
+                bodyy
+            </body>
         </div>
     )
 };

@@ -2,7 +2,19 @@
   background-color: #252935;
   color: white;
   min-height: 95vh;
+  max-height: 95vh;
+  max-width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+}
+.body-Nav {
+  padding: 2px;
+  background-color: green;
+  width: 3%;
+  max-width: 3%;
+}
+.body-Body {
+  padding: 2px;
+  background-color: aqua;
+  width: 97%;
+  max-width: 97%;
 }
