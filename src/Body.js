@@ -2,6 +2,7 @@ import './Body.css';
 import { FaImages } from "react-icons/fa";
 import { GoTextSize } from "react-icons/go";
 import { BsThreeDots } from "react-icons/bs";
+import { MdOutlineArrowBackIosNew } from "react-icons/md";
 
 
 function showExtendNav(){   
@@ -15,7 +16,16 @@ function hideExtendNav(){
 function NavExtend (){
     return(
         <div id='navExtendiv' className='nav-Extend'>
-            <button onClick={hideExtendNav}>back</button>
+            <div className='nav-Extend-header'>
+                <p>Text</p>
+                <button className='nav-Extend-backBtn' onClick={hideExtendNav}><MdOutlineArrowBackIosNew className='nav-Extend-backIcon'/></button>
+            </div>
+            <div className='nav-Extend-Body'>
+                    
+                <input className='text-Box' placeholder='Top Text'></input>
+                   
+            </div>
+
         </div>
     )
 
@@ -48,9 +58,7 @@ function Main(){
     return(
         <div className='body-Body'>
                 <div className='edit-Box-Div'>
-                    <div className='text-Div'>
-                        <input className='text-Box'></input>
-                    </div>
+                    
                     
 
                 </div>               
