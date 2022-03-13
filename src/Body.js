@@ -28,6 +28,8 @@ function NavExtend (){
             <div className='nav-Extend-Body'>
                     
                 <input className='text-Box' placeholder='Top Text'></input>
+                <input className='text-Box' placeholder='Top Text'></input>
+                <button className='add-Text-Btn'>Add Text</button>
                    
             </div>
 
