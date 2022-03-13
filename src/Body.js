@@ -8,12 +8,22 @@ import { MdOutlineArrowBackIosNew } from "react-icons/md";
 function showExtendNav(){   
     document.getElementById('navExtendiv').style.display = "flex" 
     if (document.documentElement.clientWidth <= 700) {
-        document.getElementById('editBoxid').style.backgroundColor = "green" 
+
+        document.getElementById("editBoxid").style.cssText = `
+            width: 60vw;
+            height: 60vw;
+            margin: 0px;
+            margin-top: 50vh; 
+        `;
     }
+    
 }
 
 function hideExtendNav(){   
     document.getElementById('navExtendiv').style.display = "none" 
+    document.getElementById("editBoxid").classList.add("edit-Box-Div");
+    
+
 }
 
 function NavExtend (){
