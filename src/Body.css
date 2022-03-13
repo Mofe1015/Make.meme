@@ -32,6 +32,13 @@
   margin-top: auto;
   margin-bottom: auto;
 }
+.edit-Box-Div-small {
+  background-color: white;
+  height: 40vw;
+  width: 40vw;
+  margin-top: auto;
+  margin-bottom: auto;
+}
 .body-Nav-Btn {
   margin: auto;
   display: flex;
@@ -78,6 +85,7 @@
 .nav-Extend-header {
   display: flex;
   border-bottom: 1px white;
+  width: 100%;
 }
 .nav-Extend-header > p {
   margin-left: auto;
@@ -95,6 +103,9 @@
   width: 20px;
   height: 20px;
 }
+.nav-Extend-backIcon-x {
+  display: none;
+}
 .nav-Extend-Body {
   display: flex;
 }
@@ -108,7 +119,6 @@
 }
 @media only screen and (max-width: 700px) {
   .Body {
-    background-color: green;
     display: flex;
     flex-direction: column-reverse;
     overflow: hidden;
@@ -123,11 +133,27 @@
     height: 90vh;
     min-height: 85vh;
   }
+  .nav-Extend-backIcon {
+    display: none;
+  }
   .edit-Box-Div {
     background-color: white;
     height: 90vw;
     width: 90vw;
     margin-top: auto;
+    margin-bottom: auto;
+
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  .edit-Box-Div-small {
+    max-width: 250px;
+    width: 250px;
+    height: 250px;
+    margin: 0px;
+    margin-top: 300px;
+    margin-bottom: -100px;
+
     margin-bottom: auto;
   }
 
@@ -140,13 +166,22 @@
     min-height: 6vh;
   }
   .nav-Extend {
-    background-color: blue;
+    background-color: #1a1e2b;
     display: none;
     flex-direction: column;
     padding: 2px;
     width: 100%;
     max-width: 100%;
-    height: 50vh;
-    min-height: 50vh;
+    height: 300px;
+    min-height: 300px;
+  }
+  .nav-Extend-header > p {
+    margin-left: 48%;
+  }
+  .nav-Extend-backIcon-x {
+    display: block;
+    width: 25px;
+    height: 25px;
+    margin-left: 200%;
   }
 }

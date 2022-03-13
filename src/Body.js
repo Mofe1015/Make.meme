@@ -2,28 +2,18 @@ import './Body.css';
 import { FaImages } from "react-icons/fa";
 import { GoTextSize } from "react-icons/go";
 import { BsThreeDots } from "react-icons/bs";
-import { MdOutlineArrowBackIosNew } from "react-icons/md";
+import { MdOutlineArrowBackIosNew, MdClose } from "react-icons/md";
 
 
 function showExtendNav(){   
     document.getElementById('navExtendiv').style.display = "flex" 
-    if (document.documentElement.clientWidth <= 700) {
-
-        document.getElementById("editBoxid").style.cssText = `
-            width: 60vw;
-            height: 60vw;
-            margin: 0px;
-            margin-top: 50vh; 
-        `;
-    }
-    
+    document.getElementById("editBoxid").classList.replace('edit-Box-Div', 'edit-Box-Div-small');
 }
 
 function hideExtendNav(){   
     document.getElementById('navExtendiv').style.display = "none" 
-    document.getElementById("editBoxid").classList.add("edit-Box-Div");
+    document.getElementById("editBoxid").classList.replace( 'edit-Box-Div-small','edit-Box-Div');
     
-
 }
 
 function NavExtend (){
@@ -31,7 +21,9 @@ function NavExtend (){
         <div id='navExtendiv' className='nav-Extend'>
             <div className='nav-Extend-header'>
                 <p>Text</p>
+                <button className='nav-Extend-backBtn' onClick={hideExtendNav}><MdClose className='nav-Extend-backIcon-x'/></button>
                 <button className='nav-Extend-backBtn' onClick={hideExtendNav}><MdOutlineArrowBackIosNew className='nav-Extend-backIcon'/></button>
+
             </div>
             <div className='nav-Extend-Body'>
                     
