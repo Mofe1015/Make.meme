@@ -141,7 +141,7 @@
   }
   .nav-Extend {
     background-color: blue;
-    display: flex;
+    display: none;
     flex-direction: column;
     padding: 2px;
     width: 100%;

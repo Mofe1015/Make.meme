@@ -7,6 +7,9 @@ import { MdOutlineArrowBackIosNew } from "react-icons/md";
 
 function showExtendNav(){   
     document.getElementById('navExtendiv').style.display = "flex" 
+    if (document.documentElement.clientWidth <= 700) {
+        document.getElementById('editBoxid').style.backgroundColor = "green" 
+    }
 }
 
 function hideExtendNav(){   
@@ -57,10 +60,8 @@ function Nav(){
 function Main(){
     return(
         <div className='body-Body'>
-                <div className='edit-Box-Div'>
+                <div id='editBoxid' className='edit-Box-Div'>
                     
-                    
-
                 </div>               
             </div>
     )
