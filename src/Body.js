@@ -3,6 +3,7 @@ import { FaImages } from "react-icons/fa";
 import { GoTextSize } from "react-icons/go";
 import { BsThreeDots } from "react-icons/bs";
 import { MdOutlineArrowBackIosNew, MdClose } from "react-icons/md";
+import memesData from "./memesData.js"
 import React from 'react';
 
 
@@ -19,7 +20,15 @@ function hideExtendNav(){
 
 
 
-
+function Meme() {
+    const [memeImage, setMemeImage] = React.useState("")
+    
+    function getMemeImage() {
+        const memesArray = memesData.data.memes
+        const randomNumber = Math.floor(Math.random() * memesArray.length)
+        setMemeImage(memesArray[randomNumber].url)
+    }
+}
 
 
 const ImageExtended =(
@@ -29,6 +38,9 @@ const ImageExtended =(
                     <p>Images</p>
                     <button className='nav-Extend-backBtn' onClick={hideExtendNav}><MdClose className='nav-Extend-backIcon-x'/></button>
                     <button className='nav-Extend-backBtn' onClick={hideExtendNav}><MdOutlineArrowBackIosNew className='nav-Extend-backIcon'/></button>
+                </div>
+                <div className='nav-Extend-Body'>
+                    <button className='add-Text-Btn'>Add random Image</button>
                 </div>
 
         </>
