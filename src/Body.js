@@ -20,15 +20,32 @@ function hideExtendNav(){
 
 
 
-function Meme() {
-    const [memeImage, setMemeImage] = React.useState("")
-    
-    function getMemeImage() {
-        const memesArray = memesData.data.memes
-        const randomNumber = Math.floor(Math.random() * memesArray.length)
-        setMemeImage(memesArray[randomNumber].url)
-    }
+
+let memeImage
+let setMemeImage
+
+function getMemeImage() {
+    console.log("getting image")
+   const memesArray = memesData.data.memes
+   const randomNumber = Math.floor(Math.random() * memesArray.length)
+   setMemeImage(memesArray[randomNumber].url)
+       
+   
 }
+
+function Main(){
+
+     [memeImage, setMemeImage] = React.useState("")
+     
+    return(
+        <div className='body-Body'>
+                <div id='editBoxid' className='edit-Box-Div'>
+                    {memeImage}
+                </div>               
+        </div>
+        
+    )
+};
 
 
 const ImageExtended =(
@@ -40,7 +57,7 @@ const ImageExtended =(
                     <button className='nav-Extend-backBtn' onClick={hideExtendNav}><MdOutlineArrowBackIosNew className='nav-Extend-backIcon'/></button>
                 </div>
                 <div className='nav-Extend-Body'>
-                    <button className='add-Text-Btn'>Add random Image</button>
+                    <button className='add-Text-Btn' onClick={getMemeImage}>Add random Image</button>
                 </div>
 
         </>
@@ -107,17 +124,6 @@ function Nav(){
 };
 
 
-
-function Main(){
-    return(
-        <div className='body-Body'>
-                <div id='editBoxid' className='edit-Box-Div'>
-                    
-                </div>               
-        </div>
-        
-    )
-};
 
 
 function Body (){
