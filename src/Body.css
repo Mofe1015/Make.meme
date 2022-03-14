@@ -88,7 +88,7 @@
   width: 100%;
 }
 .nav-Extend-header > p {
-  margin-left: auto;
+  margin-left: 40%;
 }
 .nav-Extend-backBtn {
   background-color: transparent;
@@ -133,6 +133,7 @@
   border: 0;
   color: white;
   background-color: #7795f8;
+  cursor: pointer;
 }
 @media only screen and (max-width: 700px) {
   .Body {
@@ -159,10 +160,10 @@
     width: 90vw;
     margin-top: auto;
     margin-bottom: auto;
-
     margin-top: auto;
     margin-bottom: auto;
   }
+
   .edit-Box-Div-small {
     max-width: 250px;
     width: 250px;
@@ -170,7 +171,6 @@
     margin: 0px;
     margin-top: 370px;
     margin-bottom: -370px;
-
     margin-bottom: auto;
   }
 
@@ -182,6 +182,7 @@
     height: 6vh;
     min-height: 6vh;
   }
+
   .nav-Extend {
     background-color: #1a1e2b;
     display: none;
@@ -192,13 +193,15 @@
     height: 300px;
     min-height: 300px;
   }
+
   .nav-Extend-header > p {
     margin-left: 48%;
   }
+
   .nav-Extend-backIcon-x {
     display: block;
     width: 25px;
     height: 25px;
-    margin-left: 200%;
+    margin-left: 300%;
   }
 }

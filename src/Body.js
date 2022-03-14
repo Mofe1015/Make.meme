@@ -15,7 +15,18 @@ function hideExtendNav(){
     document.getElementById("editBoxid").classList.replace( 'edit-Box-Div-small','edit-Box-Div');
     
 }
+function NavExtendImg(){
+    return(
+        <div id='navExtendiv' className='nav-Extend'>
+            <div className='nav-Extend-header'>
+                <p>Images</p>
+                <button className='nav-Extend-backBtn' onClick={hideExtendNav}><MdClose className='nav-Extend-backIcon-x'/></button>
+                <button className='nav-Extend-backBtn' onClick={hideExtendNav}><MdOutlineArrowBackIosNew className='nav-Extend-backIcon'/></button>
 
+            </div>
+        </div>
+    )
+};
 function NavExtend (){
     return(
         <div id='navExtendiv' className='nav-Extend'>
