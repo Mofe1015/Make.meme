@@ -22,18 +22,19 @@ function hideExtendNav(){
 
 
 
-function NavExtendImg(){
-    return(
-        <div id='navExtendiv' className='nav-Extend'>
-            <div className='nav-Extend-header'>
-                <p>Images</p>
-                <button className='nav-Extend-backBtn' onClick={hideExtendNav}><MdClose className='nav-Extend-backIcon-x'/></button>
-                <button className='nav-Extend-backBtn' onClick={hideExtendNav}><MdOutlineArrowBackIosNew className='nav-Extend-backIcon'/></button>
+const ImageExtended =(
+        <>
+       
+                <div className='nav-Extend-header'>
+                    <p>Images</p>
+                    <button className='nav-Extend-backBtn' onClick={hideExtendNav}><MdClose className='nav-Extend-backIcon-x'/></button>
+                    <button className='nav-Extend-backBtn' onClick={hideExtendNav}><MdOutlineArrowBackIosNew className='nav-Extend-backIcon'/></button>
+                </div>
 
-            </div>
-        </div>
-    )
-};
+        </>
+        
+)
+
 
 const TextExtended = (
     <>
@@ -55,17 +56,21 @@ const TextExtended = (
 
 
 function Nav(){
+
     const [extendedNav, setExtendedNav] = React.useState(<></>)
-    
         
     function addText(){
         setExtendedNav(TextExtended)
         showExtendNav()
     }
+    function addImage(){
+        setExtendedNav(ImageExtended)
+        showExtendNav()
+    }
     return(
         <>
             <nav className='body-Nav'>
-                <button className='body-Nav-Btn'>
+                <button className='body-Nav-Btn'  onClick={addImage}>
                     <FaImages className='boby-Nav-icon'/>
                     <p>Images</p>
                 </button>
