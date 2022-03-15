@@ -40,7 +40,7 @@ function Main(){
     return(
         <div className='body-Body'>
                 <div id='editBoxid' className='edit-Box-Div'>
-                    {memeImage}
+                    <img src={memeImage} className="meme-image" />
                 </div>               
         </div>
         
