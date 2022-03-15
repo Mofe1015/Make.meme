@@ -52,7 +52,7 @@ const ImageExtended =(
         <>
        
                 <div className='nav-Extend-header'>
-                    <p>Images</p>
+                    <div className='extendedNav-Text-Div' ><p>Images</p></div>
                     <button className='nav-Extend-backBtn' onClick={hideExtendNav}><MdClose className='nav-Extend-backIcon-x'/></button>
                     <button className='nav-Extend-backBtn' onClick={hideExtendNav}><MdOutlineArrowBackIosNew className='nav-Extend-backIcon'/></button>
                 </div>

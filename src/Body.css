@@ -215,11 +215,10 @@
     width: 100%;
   }
   .extendedNav-Text-Div {
-    margin-left: 33%;
-    margin-right: 25%;
     display: flex;
-    width: 150px;
-    max-width: 150px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
   }
 
   .extendedNav-Text-Div > p {
@@ -232,5 +231,6 @@
     display: block;
     width: 25px;
     height: 25px;
+    margin-left: -150%;
   }
 }
