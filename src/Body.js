@@ -39,7 +39,7 @@ function Main(){
      
     return(
         <div className='body-Body'>
-                <div id='editBoxid' className='edit-Box-Div'>
+                <div id='editBoxid' className='edit-Box-Div' onClick={hideExtendNav}>
                     <img src={memeImage} className="meme-image" />
                 </div>               
         </div>
@@ -68,7 +68,7 @@ const ImageExtended =(
 const TextExtended = (
     <>
         <div className='nav-Extend-header'>
-            <p>Text</p>
+            <div className='extendedNav-Text-Div' ><p>Text</p></div>
             <button className='nav-Extend-backBtn' onClick={hideExtendNav}><MdClose className='nav-Extend-backIcon-x'/></button>
             <button className='nav-Extend-backBtn' onClick={hideExtendNav}><MdOutlineArrowBackIosNew className='nav-Extend-backIcon'/></button>
         </div>

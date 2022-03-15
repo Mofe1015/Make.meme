@@ -100,8 +100,14 @@
   border-bottom: 1px white;
   width: 100%;
 }
-.nav-Extend-header > p {
-  margin-left: 40%;
+.extendedNav-Text-Div {
+  display: flex;
+  width: 500px;
+  max-width: 500px;
+}
+.extendedNav-Text-Div > p {
+  margin-left: auto;
+  margin-right: auto;
 }
 .nav-Extend-backBtn {
   background-color: transparent;
@@ -197,7 +203,6 @@
   }
 
   .nav-Extend {
-    background-color: #1a1e2b;
     display: none;
     flex-direction: column;
     padding: 2px;
@@ -206,15 +211,26 @@
     height: 300px;
     min-height: 300px;
   }
-
-  .nav-Extend-header > p {
-    margin-left: 48%;
+  .nav-Extend-header {
+    width: 100%;
+  }
+  .extendedNav-Text-Div {
+    margin-left: 33%;
+    margin-right: 25%;
+    display: flex;
+    width: 150px;
+    max-width: 150px;
   }
 
+  .extendedNav-Text-Div > p {
+    margin: auto;
+  }
+  .nav-Extend-backIcon {
+    display: none;
+  }
   .nav-Extend-backIcon-x {
     display: block;
     width: 25px;
     height: 25px;
-    margin-left: 250%;
   }
 }
