@@ -1,6 +1,6 @@
 import './Body.css';
 import { FaImages } from "react-icons/fa";
-import { GoTextSize } from "react-icons/go";
+import { GoTextSize, GoSearch } from "react-icons/go";
 import { BsThreeDots } from "react-icons/bs";
 import { MdOutlineArrowBackIosNew, MdClose } from "react-icons/md";
 import memesData from "./memesData.js"
@@ -58,7 +58,13 @@ const ImageExtended =(
                 </div>
                 <div className='nav-Extend-Body'>
                     <div className='search-Img-Div'>
-
+                        <div className='searchbar-div'>
+                            <GoSearch className='search-Img-icon'/>
+                        </div>
+                        <div className='go-Div'>
+                            <p>Go</p>
+                        </div>
+                        
                     </div>
                     <button className='add-Text-Btn' onClick={getMemeImage}>Add random Image</button>
                 </div>
