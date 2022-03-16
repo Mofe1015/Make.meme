@@ -60,10 +60,11 @@ const ImageExtended =(
                     <div className='search-Img-Div'>
                         <div className='searchbar-div'>
                             <GoSearch className='search-Img-icon'/>
+                            <input className='search-Img-Input' placeholder='search'></input>
                         </div>
-                        <div className='go-Div'>
+                        <button className='go-Btn'>
                             <p>Go</p>
-                        </div>
+                        </button>
                         
                     </div>
                     <button className='add-Text-Btn' onClick={getMemeImage}>Add random Image</button>

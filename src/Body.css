@@ -139,7 +139,7 @@
   font-size: 20px;
   border: 0 !important;
 }
-.text-Box :focus {
+.text-Box:focus {
   box-shadow: 0 0 0 0;
   outline: 0;
   border: none;
@@ -183,7 +183,16 @@
   margin-top: auto;
   margin-bottom: auto;
 }
-.go-Div {
+.search-Img-Input {
+  margin: auto;
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+.search-Img-Input:focus {
+  outline: none;
+}
+.go-Btn {
   background-color: #7795f8;
   width: 15%;
   height: 100%;
@@ -195,8 +204,9 @@
   align-items: center;
   border-radius: 4px;
   cursor: pointer;
+  border: none;
 }
-.go-Div > p {
+.go-Btn > p {
   margin: 0px;
   padding: 0px;
   color: white;
