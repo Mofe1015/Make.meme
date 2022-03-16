@@ -57,6 +57,9 @@ const ImageExtended =(
                     <button className='nav-Extend-backBtn' onClick={hideExtendNav}><MdOutlineArrowBackIosNew className='nav-Extend-backIcon'/></button>
                 </div>
                 <div className='nav-Extend-Body'>
+                    <div className='search-Img-Div'>
+
+                    </div>
                     <button className='add-Text-Btn' onClick={getMemeImage}>Add random Image</button>
                 </div>
 

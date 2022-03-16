@@ -154,6 +154,18 @@
   background-color: #7795f8;
   cursor: pointer;
 }
+
+.search-Img-Div {
+  margin: auto;
+  width: 250px;
+  height: 30px;
+  border-radius: 5px;
+  border: 0;
+  color: white;
+  background-color: #7795f8;
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 700px) {
   .Body {
     display: flex;
