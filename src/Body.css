@@ -189,11 +189,34 @@
   background-color: transparent;
   border: none;
   color: white;
-  padding-left: 5px;
+  padding-left: 10px;
+  padding-right: 5px;
+  max-width: 75%;
 }
 .search-Img-Input:focus {
   outline: none;
 }
+.clear-SearchField {
+  background-color: transparent;
+  border: none;
+  width: 10px;
+  height: 20px;
+  margin: auto;
+  cursor: pointer;
+  justify-self: start;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.clear-SearchField > * {
+  color: #828694;
+  margin-left: -27px;
+  width: 50px;
+  height: 20px;
+}
+.clear-SearchField > *:active {
+  background-color: transparent;
+}
+
 .go-Btn {
   background-color: #7795f8;
   width: 15%;
@@ -305,6 +328,10 @@
   }
   .search-Img-Div {
     width: 90%;
+  }
+  .search-Img-Input {
+    width: 100%;
+    margin: auto;
   }
   .add-RndmImg-Btn {
     width: 90%;

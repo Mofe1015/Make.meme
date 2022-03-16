@@ -18,7 +18,9 @@ function hideExtendNav(){
     
 }
 
-
+function clearSearchField(){
+    document.getElementById('searchimageinputid').value= null; 
+}
 
 
 let memeImage
@@ -60,7 +62,8 @@ const ImageExtended =(
                     <div className='search-Img-Div'>
                         <div className='searchbar-div'>
                             <GoSearch className='search-Img-icon'/>
-                            <input className='search-Img-Input' placeholder='search'></input>
+                            <input id='searchimageinputid' className='search-Img-Input' placeholder='search'></input>
+                             <button className='clear-SearchField'  onClick={clearSearchField}><MdClose/></button>
                         </div>
                         <button className='go-Btn'>
                             <p>Go</p>
