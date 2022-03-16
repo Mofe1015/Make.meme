@@ -184,10 +184,12 @@
   margin-bottom: auto;
 }
 .search-Img-Input {
-  margin: auto;
+  margin-top: auto;
+  margin-bottom: auto;
   background-color: transparent;
   border: none;
   color: white;
+  padding-left: 5px;
 }
 .search-Img-Input:focus {
   outline: none;
@@ -211,6 +213,16 @@
   padding: 0px;
   color: white;
   margin: auto;
+}
+.add-RndmImg-Btn {
+  margin: auto;
+  width: 250px;
+  height: 30px;
+  border-radius: 5px;
+  border: 0;
+  color: white;
+  background-color: #7795f8;
+  cursor: pointer;
 }
 @media only screen and (max-width: 700px) {
   .Body {
@@ -290,5 +302,11 @@
     width: 25px;
     height: 25px;
     margin-left: -150%;
+  }
+  .search-Img-Div {
+    width: 90%;
+  }
+  .add-RndmImg-Btn {
+    width: 90%;
   }
 }

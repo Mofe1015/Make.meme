@@ -67,7 +67,7 @@ const ImageExtended =(
                         </button>
                         
                     </div>
-                    <button className='add-Text-Btn' onClick={getMemeImage}>Add random Image</button>
+                    <button className='add-RndmImg-Btn' onClick={getMemeImage}>Add random Image</button>
                 </div>
 
         </>
