@@ -75,12 +75,20 @@ const ImageExtended =(
         </>
         
 )
+let firstInputText
+let setFirstInputText
+let secondInputText
+let setSecondInputText
 
+function textInputChange(){
+    console.log("textinput change")}
+    function AddText(){
+        [firstInputText, setFirstInputText] = React.useState("")
+        [secondInputText, setSecondInputText] = React.useState("")
 
+    } 
 const TextExtended = (
-    function textInputChange(){
-       console.log("textinput change")
-       return(
+   
         <>
             <div className='nav-Extend-header'>
                 <div className='extendedNav-Text-Div' ><p>Text</p></div>
@@ -96,9 +104,7 @@ const TextExtended = (
                 
             </div>
         </> 
-       )
-    }
-    
+       
 )
 
 
