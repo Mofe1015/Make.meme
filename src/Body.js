@@ -20,14 +20,13 @@ function hideExtendNav(){
 
 function clearSearchField(){
     document.getElementById('searchimageinputid').value= null; 
-}
+} 
 
 
 let memeImage
 let setMemeImage
 
 function getMemeImage() {
-    console.log("getting image")
    const memesArray = memesData.data.memes
    const randomNumber = Math.floor(Math.random() * memesArray.length)
    setMemeImage(memesArray[randomNumber].url)
