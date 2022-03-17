@@ -78,20 +78,27 @@ const ImageExtended =(
 
 
 const TextExtended = (
-    <>
-        <div className='nav-Extend-header'>
-            <div className='extendedNav-Text-Div' ><p>Text</p></div>
-            <button className='nav-Extend-backBtn' onClick={hideExtendNav}><MdClose className='nav-Extend-backIcon-x'/></button>
-            <button className='nav-Extend-backBtn' onClick={hideExtendNav}><MdOutlineArrowBackIosNew className='nav-Extend-backIcon'/></button>
-        </div>
-        <div className='nav-Extend-Body'>
-                        
-            <input className='text-Box' placeholder='Top Text'></input>
-            <input className='text-Box' placeholder='Bottom Text'></input>
-            <button className='add-Text-Btn'>Add Text</button>
-                    
-        </div>
-    </> 
+    function textInputChange(){
+       console.log("textinput change")
+       return(
+        <>
+            <div className='nav-Extend-header'>
+                <div className='extendedNav-Text-Div' ><p>Text</p></div>
+                <button className='nav-Extend-backBtn' onClick={hideExtendNav}><MdClose className='nav-Extend-backIcon-x'/></button>
+                <button className='nav-Extend-backBtn' onClick={hideExtendNav}><MdOutlineArrowBackIosNew className='nav-Extend-backIcon'/></button>
+            </div>
+            <div className='nav-Extend-Body'>
+                <form className='nav-Extend-Body'>
+                    <input className='text-Box' placeholder='Top Text' onChange={textInputChange}></input>
+                    <input className='text-Box' placeholder='Bottom Text' onChange={textInputChange}></input>
+                    <button className='add-Text-Btn' >Add Text</button>    
+                </form>
+                
+            </div>
+        </> 
+       )
+    }
+    
 )
 
 
