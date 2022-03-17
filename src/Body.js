@@ -75,19 +75,25 @@ const ImageExtended =(
         </>
         
 )
-let firstInputText
-let setFirstInputText
-let secondInputText
-let setSecondInputText
 
-function textInputChange(){
-    console.log("textinput change")}
-    function AddText(){
-        [firstInputText, setFirstInputText] = React.useState("")
-        [secondInputText, setSecondInputText] = React.useState("")
+let inputTextData
+let setInputTextData
+function TextExtended(){
+   
+    [inputTextData, setInputTextData] = React.useState(
+        {firstText: "", secondText: ""}
+        )
 
-    } 
-const TextExtended = (
+    function textInputChange(event) {
+        setInputTextData(prevInputTextData => {
+            return {
+                ...prevInputTextData,
+                [event.target.name]: event.target.value
+            }
+        })
+        console.log(inputTextData)
+    }
+    return(
    
         <>
             <div className='nav-Extend-header'>
@@ -97,15 +103,25 @@ const TextExtended = (
             </div>
             <div className='nav-Extend-Body'>
                 <form className='nav-Extend-Body'>
-                    <input className='text-Box' placeholder='Top Text' onChange={textInputChange}></input>
-                    <input className='text-Box' placeholder='Bottom Text' onChange={textInputChange}></input>
+                    <input
+                        className='text-Box'
+                        placeholder='Top Text'
+                        onChange={textInputChange}
+                        name='firstText'
+                    />
+                    <input
+                        className='text-Box'
+                        placeholder='Bottom Text'
+                        onChange={textInputChange}
+                        name='secondText'
+                    />
                     <button className='add-Text-Btn' >Add Text</button>    
                 </form>
                 
             </div>
         </> 
        
-)
+    )}
 
 
 
@@ -114,7 +130,7 @@ function Nav(){
     const [extendedNav, setExtendedNav] = React.useState(<></>)
         
     function addText(){
-        setExtendedNav(TextExtended)
+        setExtendedNav(<TextExtended/>)
         showExtendNav()
     }
     function addImage(){
