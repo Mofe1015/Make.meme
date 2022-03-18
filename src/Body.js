@@ -18,14 +18,18 @@ function hideExtendNav(){
     
 };
 
-
+let memeData
+let setMemeData
 
 function Main(){
-    [memeImage, setMemeImage] = React.useState("")
+    [memeData, setMemeData] = React.useState({memeImage: "", memeText: []})
+    
+
     return(
         <div className='body-Body'>
                 <div id='editBoxid' className='edit-Box-Div' onClick={hideExtendNav}>
-                    <img src={memeImage} className="meme-image" />
+                    <div  className='appendText' >{memeData.memeText}</div>
+                    <img src={memeData.memeImage} className="meme-image" />
                 </div>               
         </div>
         
@@ -33,13 +37,18 @@ function Main(){
 };
 
 
-let memeImage
-let setMemeImage
+
 function ImageExtended (){
     function getMemeImage() {
         const memesArray = memesData.data.memes
         const randomNumber = Math.floor(Math.random() * memesArray.length)
-        setMemeImage(memesArray[randomNumber].url) 
+        
+        setMemeData(prevMemeData => {
+            return {
+                ...prevMemeData,
+                memeImage: memesArray[randomNumber].url
+            }
+        })
     }
     function clearSearchField(){
         document.getElementById('searchimageinputid').value= null; 
@@ -85,6 +94,18 @@ function TextExtended(){
         })
         console.log(inputTextData)
     };
+    var textField = {text:<input/>, id:1}
+    function addText(){
+       
+        setMemeData(prevMemeData => {
+            return {
+                ...prevMemeData,
+                memeText: [textField.text, prevMemeData.memeText]
+            }
+        })
+        
+
+    }
     return(
         <>
             <div className='nav-Extend-header'>
@@ -108,7 +129,7 @@ function TextExtended(){
                         name='secondText'
                         value={inputTextData.secondText }
                     />
-                    <button className='add-Text-Btn' >Add Text</button>    
+                    <button className='add-Text-Btn' type='button' onClick={addText}>Add Text</button>    
                 </form>
                 
             </div>
