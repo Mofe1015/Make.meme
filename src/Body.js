@@ -65,7 +65,6 @@ function ImageExtended (){
                     </div>
                     <button className='add-RndmImg-Btn' onClick={getMemeImage}>Add random Image</button>
                 </div>
-
         </>
     )   
 
@@ -77,7 +76,6 @@ function TextExtended(){
     [inputTextData, setInputTextData] = React.useState(
         {firstText: "", secondText: ""}
     )
-
     function textInputChange(event) {
         setInputTextData(prevInputTextData => {
             return {
@@ -136,7 +134,6 @@ function Nav(){
                     <FaImages className='boby-Nav-icon'/>
                     <p>Images</p>
                 </button>
-
                 <button id='textBtn' className='body-Nav-Btn' onClick={addText}>
                     <GoTextSize className='boby-Nav-icon'/>
                     <p>Text</p>
@@ -147,6 +144,7 @@ function Nav(){
                     <p>More</p>
                 </button>
             </nav>
+            
 
             <div id='navExtendiv' className='nav-Extend'>
                 {extendedNav}
