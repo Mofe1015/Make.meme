@@ -10,34 +10,18 @@ import React from 'react';
 function showExtendNav(){   
     document.getElementById('navExtendiv').style.display = "flex" 
     document.getElementById("editBoxid").classList.replace('edit-Box-Div', 'edit-Box-Div-small');
-}
+};
 
 function hideExtendNav(){   
     document.getElementById('navExtendiv').style.display = "none" 
     document.getElementById("editBoxid").classList.replace( 'edit-Box-Div-small','edit-Box-Div');
     
-}
-
-function clearSearchField(){
-    document.getElementById('searchimageinputid').value= null; 
-} 
+};
 
 
-let memeImage
-let setMemeImage
-
-function getMemeImage() {
-   const memesArray = memesData.data.memes
-   const randomNumber = Math.floor(Math.random() * memesArray.length)
-   setMemeImage(memesArray[randomNumber].url)
-       
-   
-}
 
 function Main(){
-
-     [memeImage, setMemeImage] = React.useState("")
-     
+    [memeImage, setMemeImage] = React.useState("")
     return(
         <div className='body-Body'>
                 <div id='editBoxid' className='edit-Box-Div' onClick={hideExtendNav}>
@@ -49,9 +33,19 @@ function Main(){
 };
 
 
-const ImageExtended =(
+let memeImage
+let setMemeImage
+function ImageExtended (){
+    function getMemeImage() {
+        const memesArray = memesData.data.memes
+        const randomNumber = Math.floor(Math.random() * memesArray.length)
+        setMemeImage(memesArray[randomNumber].url) 
+    }
+    function clearSearchField(){
+        document.getElementById('searchimageinputid').value= null; 
+    };
+    return(
         <>
-       
                 <div className='nav-Extend-header'>
                     <div className='extendedNav-Text-Div' ><p>Images</p></div>
                     <button className='nav-Extend-backBtn' onClick={hideExtendNav}><MdClose className='nav-Extend-backIcon-x'/></button>
@@ -73,16 +67,16 @@ const ImageExtended =(
                 </div>
 
         </>
-        
-)
+    )   
+
+}
 
 let inputTextData
 let setInputTextData
 function TextExtended(){
-   
     [inputTextData, setInputTextData] = React.useState(
         {firstText: "", secondText: ""}
-        )
+    )
 
     function textInputChange(event) {
         setInputTextData(prevInputTextData => {
@@ -92,9 +86,8 @@ function TextExtended(){
             }
         })
         console.log(inputTextData)
-    }
+    };
     return(
-   
         <>
             <div className='nav-Extend-header'>
                 <div className='extendedNav-Text-Div' ><p>Text</p></div>
@@ -108,35 +101,34 @@ function TextExtended(){
                         placeholder='Top Text'
                         onChange={textInputChange}
                         name='firstText'
+                        value={inputTextData.firstText}
                     />
                     <input
                         className='text-Box'
                         placeholder='Bottom Text'
                         onChange={textInputChange}
                         name='secondText'
+                        value={inputTextData.secondText }
                     />
                     <button className='add-Text-Btn' >Add Text</button>    
                 </form>
                 
             </div>
-        </> 
-       
-    )}
+        </>    
+    )};
 
 
 
 function Nav(){
-
     const [extendedNav, setExtendedNav] = React.useState(<></>)
-        
     function addText(){
         setExtendedNav(<TextExtended/>)
         showExtendNav()
-    }
+    };
     function addImage(){
-        setExtendedNav(ImageExtended)
+        setExtendedNav(<ImageExtended/>)
         showExtendNav()
-    }
+    };
     return(
         <>
             <nav className='body-Nav'>
@@ -159,17 +151,12 @@ function Nav(){
             <div id='navExtendiv' className='nav-Extend'>
                 {extendedNav}
             </div>
-        </>
-        
+        </>   
     )
 };
 
 
-
-
-function Body (){
-    
-    
+function Body (){   
     return(
         <div className='Body'>
            <Nav/>
