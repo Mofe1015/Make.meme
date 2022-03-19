@@ -27,8 +27,8 @@ function Main(){
 
     return(
         <div className='body-Body'>
-                <div id='editBoxid' className='edit-Box-Div' onClick={hideExtendNav}>
-                    <div  className='appendText' >{memeData.memeText}</div>
+                <div id='editBoxid' className='edit-Box-Div' >
+                    <div className='add-Text-inputDiv' >{memeData.memeText}</div>
                     <img src={memeData.memeImage} className="meme-image" />
                 </div>               
         </div>
@@ -84,7 +84,8 @@ let setInputTextData
 function TextExtended(){
     [inputTextData, setInputTextData] = React.useState(
         {firstText: "", secondText: ""}
-    )
+    );
+
     function textInputChange(event) {
         setInputTextData(prevInputTextData => {
             return {
@@ -94,13 +95,14 @@ function TextExtended(){
         })
         console.log(inputTextData)
     };
-    var textField = {text:<input/>, id:1}
+
+    
     function addText(){
-       
+        var textField = <input className='add-Text-input'></input>
         setMemeData(prevMemeData => {
             return {
                 ...prevMemeData,
-                memeText: [textField.text, prevMemeData.memeText]
+                memeText: [textField, prevMemeData.memeText]
             }
         })
         
