@@ -98,7 +98,12 @@ function TextExtended(){
 
     
     function addText(){
-        var textField = <input className='add-Text-input'></input>
+        
+        var textField = (
+            <div id="myinputdiv">
+                <textarea className='add-Text-input'></textarea>
+            </div>
+        )
         setMemeData(prevMemeData => {
             return {
                 ...prevMemeData,

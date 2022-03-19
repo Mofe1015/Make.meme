@@ -253,13 +253,18 @@
 .add-Text-inputDiv {
   width: 40vw;
   height: 40vw;
-  border: solid green 2px;
   z-index: 0;
   position: fixed;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 .add-Text-input {
-  color: green;
+  width: 50%;
+  margin: auto;
+  font-size: 200%;
 }
+
 @media only screen and (max-width: 700px) {
   .Body {
     display: flex;
@@ -279,9 +284,10 @@
   .add-Text-inputDiv {
     height: 275px;
     width: 275px;
-    border: solid green 2px;
     z-index: 0;
     position: fixed;
+    max-width: 275px;
+    max-height: 275px;
   }
   .nav-Extend-backIcon {
     display: none;
