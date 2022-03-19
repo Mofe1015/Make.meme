@@ -259,10 +259,19 @@
   flex-direction: column;
   overflow: hidden;
 }
-.add-Text-input {
-  width: 50%;
+#myinputdivid {
+  width: 400px;
+  height: 100px;
+  background-color: green;
   margin: auto;
+  display: flex;
+}
+.add-Text-input {
+  height: 80%;
+  width: 80%;
+  color: blue;
   font-size: 200%;
+  margin: auto;
 }
 
 @media only screen and (max-width: 700px) {

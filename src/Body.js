@@ -18,13 +18,10 @@ function hideExtendNav(){
     
 };
 
-let memeData
-let setMemeData
 
+let memeData, setMemeData;
 function Main(){
     [memeData, setMemeData] = React.useState({memeImage: "", memeText: []})
-    
-
     return(
         <div className='body-Body'>
                 <div id='editBoxid' className='edit-Box-Div' >
@@ -79,8 +76,8 @@ function ImageExtended (){
 
 }
 
-let inputTextData
-let setInputTextData
+let inputTextData, setInputTextData;
+
 function TextExtended(){
     [inputTextData, setInputTextData] = React.useState(
         {firstText: "", secondText: ""}
@@ -95,12 +92,10 @@ function TextExtended(){
         })
         console.log(inputTextData)
     };
-
-    
     function addText(){
         
         var textField = (
-            <div id="myinputdiv">
+            <div id="myinputdivid">
                 <textarea className='add-Text-input'></textarea>
             </div>
         )
