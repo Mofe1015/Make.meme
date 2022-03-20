@@ -76,8 +76,8 @@ function ImageExtended (){
 
 }
 
-let inputTextData, setInputTextData;
-
+let inputTextData, setInputTextData, myid, myidhandler;
+var idnum = 0
 function TextExtended(){
     [inputTextData, setInputTextData] = React.useState(
         {firstText: "", secondText: ""}
@@ -91,16 +91,24 @@ function TextExtended(){
             }
         })
     };
+    
     function addText(event){
-       
+         
+        idnum = idnum + 1
         
+        myid = "myinputdivid"+idnum
+        myidhandler = myid+"handler"
+        console.log(myid, myidhandler)
+
+        var textField = (
+            <div className='myinputdivid' id={myid}>
+                <div className='myinputdividhandler' onMouseEnter={moveinpudiv} id={myidhandler}  ></div>
+                <textarea className='add-Text-input'></textarea>
+            </div>
+        )
         setMemeData(prevMemeData => {
-            var textField = (
-                <div id="myinputdivid">
-                    <div id='myinputdividhandler'></div>
-                    <textarea className='add-Text-input'></textarea>
-                </div>
-            )
+            
+            
             
             return {
                 ...prevMemeData,
@@ -110,21 +118,23 @@ function TextExtended(){
        
         
     }
-    setTimeout(moveinpudiv, 1000)
+    
    
     function moveinpudiv(){
-        
-        dragElement(document.getElementById("myinputdivid"));
+        console.log(myid)
+        document.getElementById(myid).style.backgroundColor = "red"
+        dragElement(document.getElementById(myid));
         function dragElement(elmnt) {
-            document.getElementById('myinputdivid').style.backgroundColor = "red"
+            
             var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
             if (document.getElementById(elmnt.id + "handler")) {
             // if present, the header is where you move the DIV from:
-            document.getElementById(elmnt.id + "handler").onmousedown = dragMouseDown;
+            document.getElementById(elmnt.id + "handler").touchstart  = dragMouseDown;
             } else {
             // otherwise, move the DIV from anywhere inside the DIV:
             elmnt.onmousedown = dragMouseDown;
             }
+            
         
             function dragMouseDown(e) {
             e = e || window.event;
@@ -154,6 +164,8 @@ function TextExtended(){
             // stop moving when mouse button is released:
             document.onmouseup = null;
             document.onmousemove = null;
+            document.onpointerup = null;
+            document.onpointermove = null
             }
         }
     }
