@@ -102,14 +102,11 @@ function TextExtended(){
 
         var textField = (
             <div className='myinputdivid' id={myid}>
-                <div className='myinputdividhandler' onMouseEnter={moveinpudiv} id='handler'  ></div>
-                <textarea className='add-Text-input'></textarea>
+                <textarea  className='add-Text-input'></textarea>
+                <div className='myinputdividhandler' onMouseEnter={moveinpudiv} id={myidhandler}  ></div>
             </div>
         )
         setMemeData(prevMemeData => {
-            
-            
-            
             return {
                 ...prevMemeData,
                 memeText: [textField, prevMemeData.memeText]
@@ -126,15 +123,11 @@ function TextExtended(){
         dragElement(document.getElementById(myid));
         function dragElement(elmnt) {
             console.log(elmnt.id+'handler')
-            document.getElementById(myid).style.backgroundColor = "red" 
+            
             var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-            if (document.getElementById(elmnt.id+'handler')) {
-            // if present, the header is where you move the DIV from:
-            document.getElementById(elmnt.id+'handler').touchstart  = dragMouseDown;
-            } else {
-            // otherwise, move the DIV from anywhere inside the DIV:
-            elmnt.onmousedown = dragMouseDown;
-            }
+            document.getElementById(myid).style.backgroundColor = "red" 
+            document.getElementById(myidhandler).onmousedown  = dragMouseDown;
+            
             
         
             function dragMouseDown(e) {
