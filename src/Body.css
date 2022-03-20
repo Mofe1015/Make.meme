@@ -260,11 +260,19 @@
   overflow: hidden;
 }
 #myinputdivid {
-  width: 400px;
-  height: 100px;
+  position: absolute;
+
   background-color: green;
   margin: auto;
   display: flex;
+}
+#myinputdividhandler {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  border: 1px solid black;
+  right: -25px;
+  bottom: -25px;
 }
 .add-Text-input {
   height: 80%;
