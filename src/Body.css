@@ -272,14 +272,15 @@
   border: 1px solid black;
   margin-right: 45%;
   margin-left: 50%;
-  bottom: -25px;
+  bottom: -30px;
 }
 .add-Text-input {
-  height: 80%;
-  width: 80%;
+  height: 100%;
+  width: 100%;
   color: blue;
   font-size: 200%;
   margin: auto;
+  z-index: 0;
 }
 
 @media only screen and (max-width: 700px) {

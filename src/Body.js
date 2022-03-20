@@ -80,7 +80,7 @@ let inputTextData, setInputTextData, myid, myidhandler;
 var idnum = 0
 function TextExtended(){
     [inputTextData, setInputTextData] = React.useState(
-        {firstText: "", secondText: ""}
+        {firstText: "", secondText: "", }
     );
 
     function textInputChange(event) {
@@ -96,13 +96,13 @@ function TextExtended(){
          
         idnum = idnum + 1
         
-        myid = "myinputdivid"+idnum
+        myid = "myinputdivid" + idnum
         myidhandler = myid+"handler"
         console.log(myid, myidhandler)
 
         var textField = (
             <div className='myinputdivid' id={myid}>
-                <div className='myinputdividhandler' onMouseEnter={moveinpudiv} id={myidhandler}  ></div>
+                <div className='myinputdividhandler' onMouseEnter={moveinpudiv} id='handler'  ></div>
                 <textarea className='add-Text-input'></textarea>
             </div>
         )
@@ -116,20 +116,21 @@ function TextExtended(){
             }   
         });
        
-        
+        return(myid, myidhandler)   
     }
     
    
     function moveinpudiv(){
-        console.log(myid)
-        document.getElementById(myid).style.backgroundColor = "red"
+        
+        console.log(myid, myidhandler)
         dragElement(document.getElementById(myid));
         function dragElement(elmnt) {
-            
+            console.log(elmnt.id+'handler')
+            document.getElementById(myid).style.backgroundColor = "red" 
             var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-            if (document.getElementById(elmnt.id + "handler")) {
+            if (document.getElementById(elmnt.id+'handler')) {
             // if present, the header is where you move the DIV from:
-            document.getElementById(elmnt.id + "handler").touchstart  = dragMouseDown;
+            document.getElementById(elmnt.id+'handler').touchstart  = dragMouseDown;
             } else {
             // otherwise, move the DIV from anywhere inside the DIV:
             elmnt.onmousedown = dragMouseDown;
