@@ -101,18 +101,17 @@ function TextExtended(){
                     <textarea className='add-Text-input'></textarea>
                 </div>
             )
-          
+            
             return {
                 ...prevMemeData,
                 memeText: [textField, prevMemeData.memeText]
-            }
-            
-        })
+            }   
+        });
        
         
     }
-    
-    setTimeout(moveinpudiv(), 10000)
+    setTimeout(moveinpudiv, 1000)
+   
     function moveinpudiv(){
         
         dragElement(document.getElementById("myinputdivid"));
