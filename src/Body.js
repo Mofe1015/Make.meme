@@ -1,7 +1,7 @@
 import './Body.css';
 import { FaImages } from "react-icons/fa";
 import { GoTextSize, GoSearch } from "react-icons/go";
-import { BsThreeDots } from "react-icons/bs";
+import { BsThreeDots, BsArrowsMove } from "react-icons/bs";
 import { MdOutlineArrowBackIosNew, MdClose } from "react-icons/md";
 import memesData from "./memesData.js"
 import React from 'react';
@@ -76,7 +76,7 @@ function ImageExtended (){
 
 }
 
-let inputTextData, setInputTextData, myid, myidhandler;
+let inputTextData, setInputTextData, myid, myidhandler, myinputid;
 var idnum = 0
 function TextExtended(){
     [inputTextData, setInputTextData] = React.useState(
@@ -95,15 +95,24 @@ function TextExtended(){
     function addText(event){
          
         idnum = idnum + 1
-        
         myid = "myinputdivid" + idnum
         myidhandler = myid+"handler"
+        myinputid = "myinputid" + idnum
         console.log(myid, myidhandler)
+        function onFocus(){
+            document.getElementById(myinputid).style.border = 'block'
+            document.getElementById(myidhandler).style.display = 'flex'
+        }
+        function onBlur(){
+            document.getElementById(myidhandler).style.display = 'none'
+            document.getElementById(myinputid).style.border = 'none'
+
+        }
 
         var textField = (
             <div className='myinputdivid' id={myid}>
-                <textarea  className='add-Text-input'></textarea>
-                <div className='myinputdividhandler' onMouseEnter={moveinpudiv} id={myidhandler}  ></div>
+                <textarea  className='add-Text-input' placeholder='Sample Text' id={myinputid} onFocus={onFocus} onBlur={onBlur} ></textarea>
+                <div className='myinputdividhandler' onMouseEnter={moveinpudiv} id={myidhandler} ><BsArrowsMove/></div>
             </div>
         )
         setMemeData(prevMemeData => {
@@ -113,7 +122,7 @@ function TextExtended(){
             }   
         });
        
-        return(myid, myidhandler)   
+        return(myid, myidhandler, myinputid)   
     }
     
    
@@ -125,7 +134,6 @@ function TextExtended(){
             console.log(elmnt.id+'handler')
             
             var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-            document.getElementById(myid).style.backgroundColor = "red" 
             document.getElementById(myidhandler).onmousedown  = dragMouseDown;
             
             
@@ -152,6 +160,7 @@ function TextExtended(){
             // set the element's new position:
             elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
             elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+            
             }
         
             function closeDragElement() {
