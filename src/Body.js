@@ -3,6 +3,7 @@ import { FaImages } from "react-icons/fa";
 import { GoTextSize, GoSearch } from "react-icons/go";
 import { BsThreeDots, BsArrowsMove } from "react-icons/bs";
 import { MdOutlineArrowBackIosNew, MdClose } from "react-icons/md";
+import { IoIosResize } from "react-icons/io";
 import memesData from "./memesData.js"
 import React from 'react';
 
@@ -76,7 +77,7 @@ function ImageExtended (){
 
 }
 
-let inputTextData, setInputTextData, myid, myidhandler, myinputid;
+let inputTextData, setInputTextData, myid, myidhandler, myinputid, myresizerid;
 var idnum = 0
 function TextExtended(){
     [inputTextData, setInputTextData] = React.useState(
@@ -98,21 +99,24 @@ function TextExtended(){
         myid = "myinputdivid" + idnum
         myidhandler = myid+"handler"
         myinputid = "myinputid" + idnum
+        myresizerid = "myresizerid" + idnum
         console.log(myid, myidhandler)
         function onFocus(){
             document.getElementById(myinputid).style.border = 'block'
             document.getElementById(myidhandler).style.display = 'flex'
+            document.getElementById(myresizerid).style.display = 'flex'
         }
         function onBlur(){
             document.getElementById(myidhandler).style.display = 'none'
             document.getElementById(myinputid).style.border = 'none'
-
+            document.getElementById(myresizerid).style.display = 'none'
         }
 
         var textField = (
             <div className='myinputdivid' id={myid}>
                 <textarea  className='add-Text-input' placeholder='Sample Text' id={myinputid} onFocus={onFocus} onBlur={onBlur} ></textarea>
                 <div className='myinputdividhandler' onMouseEnter={moveinpudiv} id={myidhandler} ><BsArrowsMove/></div>
+                <div className='myinputdivresizer' id={myresizerid}><IoIosResize/></div>
             </div>
         )
         setMemeData(prevMemeData => {
@@ -122,7 +126,7 @@ function TextExtended(){
             }   
         });
        
-        return(myid, myidhandler, myinputid)   
+        return(myid, myidhandler, myinputid, myresizerid)   
     }
     
    

@@ -278,20 +278,46 @@
   border-radius: 50%;
   align-items: center;
 }
+.myinputdivresizer {
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  display: flex;
+  margin-left: 97%;
+  bottom: -5px;
+  background-color: #5969e2;
+  border-radius: 50%;
+  align-items: center;
+  z-index: -1;
+  padding: 2px;
+}
+.myinputdivresizer > * {
+  color: white;
+  transform: rotate(90deg);
+}
 .myinputdividhandler > * {
   color: white;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: 10%;
   width: 15px;
 }
 .add-Text-input {
   height: 100%;
   width: 100%;
-  color: blue;
+
   font-size: 200%;
   margin: auto;
   z-index: 0;
   background-color: transparent;
+  border: dashed;
+}
+.add-Text-input:focus {
+  border: dotted;
+  outline: dashed;
+}
+::-webkit-resizer {
+  display: none;
+  z-index: 0;
 }
 
 @media only screen and (max-width: 700px) {
