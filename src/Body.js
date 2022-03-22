@@ -84,6 +84,14 @@ function TextExtended(){
         {firstText: "", secondText: "", }
     );
 
+    function textInputChange(event) {
+        setInputTextData(prevInputTextData => {
+            return {
+                ...prevInputTextData,
+                [event.target.name]: event.target.value
+            }
+        })
+    };
     
     function addText(){
          
@@ -109,21 +117,21 @@ function TextExtended(){
             idhandler: myidhandler,
             resizerid: myresizerid
         };
-        console.log(textFieldData)
-        
-        var textField = (
+       
+        const textField = memeData.memeText.map(square => (
             <div className='myinputdivid' id={myid}>
                 <textarea  className='add-Text-input' placeholder='Sample Text' id={myinputid} onFocus={onFocus} onBlur={onBlur} ></textarea>
                 <div className='myinputdividhandler' onMouseEnter={moveinpudiv} id={myidhandler} ><BsArrowsMove/></div>
                 <div className='myinputdivresizer' id={myresizerid}><IoIosResize/></div>
             </div>
-        )
+        ))
         setMemeData(prevMemeData => {
             return {
                 ...prevMemeData,
-                memeText: [textField, prevMemeData.memeText]
+                memeText: [...prevMemeData.memeText, textField]
             }   
         });
+        console.log(memeData.memeText)
        
         return(myid, myidhandler, myinputid, myresizerid)   
     }
@@ -184,6 +192,20 @@ function TextExtended(){
             </div>
             <div className='nav-Extend-Body'>
                 <form className='nav-Extend-Body'>
+                    <input
+                        className='text-Box'
+                        placeholder='Top Text'
+                        onChange={textInputChange}
+                        name='firstText'
+                        value={inputTextData.firstText}
+                    />
+                    <input
+                        className='text-Box'
+                        placeholder='Bottom Text'
+                        onChange={textInputChange}
+                        name='secondText'
+                        value={inputTextData.secondText }
+                    />
                     <button className='add-Text-Btn' type='button' onClick={addText}>Add Text</button>    
                 </form>
                 
