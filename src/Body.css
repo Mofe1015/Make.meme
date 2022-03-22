@@ -309,11 +309,10 @@
   margin: auto;
   z-index: 0;
   background-color: transparent;
-  border: dashed;
+  border: dashed 1px;
 }
 .add-Text-input:focus {
-  border: dotted;
-  outline: dashed;
+  outline: dashed 1px;
 }
 ::-webkit-resizer {
   display: none;

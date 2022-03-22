@@ -84,16 +84,8 @@ function TextExtended(){
         {firstText: "", secondText: "", }
     );
 
-    function textInputChange(event) {
-        setInputTextData(prevInputTextData => {
-            return {
-                ...prevInputTextData,
-                [event.target.name]: event.target.value
-            }
-        })
-    };
     
-    function addText(event){
+    function addText(){
          
         idnum = idnum + 1
         myid = "myinputdivid" + idnum
@@ -111,7 +103,14 @@ function TextExtended(){
             document.getElementById(myinputid).style.border = 'none'
             document.getElementById(myresizerid).style.display = 'none'
         }
-
+        let textFieldData = {
+            id: myid,
+            inputid :myinputid,
+            idhandler: myidhandler,
+            resizerid: myresizerid
+        };
+        console.log(textFieldData)
+        
         var textField = (
             <div className='myinputdivid' id={myid}>
                 <textarea  className='add-Text-input' placeholder='Sample Text' id={myinputid} onFocus={onFocus} onBlur={onBlur} ></textarea>
@@ -185,20 +184,6 @@ function TextExtended(){
             </div>
             <div className='nav-Extend-Body'>
                 <form className='nav-Extend-Body'>
-                    <input
-                        className='text-Box'
-                        placeholder='Top Text'
-                        onChange={textInputChange}
-                        name='firstText'
-                        value={inputTextData.firstText}
-                    />
-                    <input
-                        className='text-Box'
-                        placeholder='Bottom Text'
-                        onChange={textInputChange}
-                        name='secondText'
-                        value={inputTextData.secondText }
-                    />
                     <button className='add-Text-Btn' type='button' onClick={addText}>Add Text</button>    
                 </form>
                 
