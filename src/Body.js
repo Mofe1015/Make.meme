@@ -103,15 +103,18 @@ function TextExtended(){
         console.log(myid, myidhandler)
         function onFocus(evt){
             var clicked = evt.target;
-            console.log(clicked.id)
-            document.getElementById(myinputid).style.border = 'block'
-            document.getElementById(myidhandler).style.display = 'flex'
-            document.getElementById(myresizerid).style.display = 'flex'
+            var clicknum = clicked.id[9]
+            console.log(clicked.id[9])
+            document.getElementById('myinputid'+clicknum).style.border = 'block'
+            document.getElementById('handler'+clicknum).style.display = 'flex'
+            document.getElementById('myresizerid'+clicknum).style.display = 'flex'
         }
         function onBlur(evt){
-            document.getElementById(myidhandler).style.display = 'none'
-            document.getElementById(myinputid).style.border = 'none'
-            document.getElementById(myresizerid).style.display = 'none'
+            var clicked = evt.target;
+            var clicknum = clicked.id[9]
+            document.getElementById('handler'+clicknum).style.display = 'none'
+            document.getElementById('myinputid'+clicknum).style.border = 'none'
+            document.getElementById('myresizerid'+clicknum).style.display = 'none'
         }
 
         var textField = (
