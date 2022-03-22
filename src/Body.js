@@ -93,59 +93,56 @@ function TextExtended(){
         })
     };
     
-    function addText(){
+    function addText(event){
          
         idnum = idnum + 1
-        myid = "myinputdivid" + idnum
-        myidhandler = myid+"handler"
+        myidhandler ="handler"+ idnum
+        myid = "myinputdivid" + myidhandler
         myinputid = "myinputid" + idnum
         myresizerid = "myresizerid" + idnum
         console.log(myid, myidhandler)
-        function onFocus(){
+        function onFocus(evt){
+            var clicked = evt.target;
+            console.log(clicked.id)
             document.getElementById(myinputid).style.border = 'block'
             document.getElementById(myidhandler).style.display = 'flex'
             document.getElementById(myresizerid).style.display = 'flex'
         }
-        function onBlur(){
+        function onBlur(evt){
             document.getElementById(myidhandler).style.display = 'none'
             document.getElementById(myinputid).style.border = 'none'
             document.getElementById(myresizerid).style.display = 'none'
         }
-        let textFieldData = {
-            id: myid,
-            inputid :myinputid,
-            idhandler: myidhandler,
-            resizerid: myresizerid
-        };
-       
-        const textField = memeData.memeText.map(square => (
+
+        var textField = (
             <div className='myinputdivid' id={myid}>
                 <textarea  className='add-Text-input' placeholder='Sample Text' id={myinputid} onFocus={onFocus} onBlur={onBlur} ></textarea>
-                <div className='myinputdividhandler' onMouseEnter={moveinpudiv} id={myidhandler} ><BsArrowsMove/></div>
+                <div className='myinputdividhandler' onMouseEnter={moveinpudiv} id={myidhandler} ></div>
                 <div className='myinputdivresizer' id={myresizerid}><IoIosResize/></div>
             </div>
-        ))
+        )
         setMemeData(prevMemeData => {
             return {
                 ...prevMemeData,
-                memeText: [...prevMemeData.memeText, textField]
+                memeText: [textField, prevMemeData.memeText]
             }   
         });
-        console.log(memeData.memeText)
        
         return(myid, myidhandler, myinputid, myresizerid)   
     }
     
    
-    function moveinpudiv(){
-        
-        console.log(myid, myidhandler)
-        dragElement(document.getElementById(myid));
+    function moveinpudiv(evt){
+        var clicked = evt.target;
+        var myid1 = "myinputdivid"+clicked.id
+       
+
+        console.log(clicked.id)
+        dragElement(document.getElementById(myid1));
         function dragElement(elmnt) {
-            console.log(elmnt.id+'handler')
             
             var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-            document.getElementById(myidhandler).onmousedown  = dragMouseDown;
+            document.getElementById(clicked.id).onmousedown  = dragMouseDown;
             
             
         
