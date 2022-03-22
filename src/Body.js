@@ -120,7 +120,8 @@ function TextExtended(){
         var textField = (
             <div className='myinputdivid' id={myid}>
                 <textarea  className='add-Text-input' placeholder='Sample Text' id={myinputid} onFocus={onFocus} onBlur={onBlur} ></textarea>
-                <div className='myinputdividhandler' onMouseEnter={moveinpudiv} id={myidhandler} ></div>
+                <div className='myinputdividhandler1'></div>
+                <div className='myinputdividhandler' onMouseEnter={moveinpudiv} id={myidhandler} ><BsArrowsMove/></div>
                 <div className='myinputdivresizer' id={myresizerid}><IoIosResize/></div>
             </div>
         )
