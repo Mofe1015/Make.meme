@@ -110,56 +110,43 @@ function TextExtended(){
             console.log(clicked.id[9])
             document.getElementById('myinputid'+clicknum).style.border = 'block'
             document.getElementById('handler'+clicknum).style.display = 'flex'
-            document.getElementById('myresizerid'+clicknum).style.display = 'flex'
+            
         };
         function onBlur(evt){
             var clicked = evt.target;
             var clicknum = clicked.id[9]
             document.getElementById('handler'+clicknum).style.display = 'none'
             document.getElementById('myinputid'+clicknum).style.border = 'none'
-            document.getElementById('myresizerid'+clicknum).style.display = 'none'
+           
         };
         function onExpand(evt){
             var hover = evt.target;
             var id = hover.id
+            var width = document.getElementById('myinputid'+id).clientWidth;
+            var height = document.getElementById('myinputid'+id).clientHeight;
+            console.log(width, height)
+            
+        }
+        function onInput(evt){
+            var input = evt.target;
+            var id = input.id
+            console.log(id)
+            var element = document.getElementById(id)
+            element.style.maxWidth = '600px'
+            element.style.height = "";
+            element.style.width = "";
+            element.style.width = element.clientWidth+element.scrollHeight + "px"
+            element.style.height = element.scrollHeight + "px"
+            
+        }
+
+
            
-            
-            
-
-
-            increaseFontSize(document.getElementById('myinputid'+id))
-            function increaseFontSize(){
-                var width = 0, height = 0
-                document.getElementById(id).onmousedown  = dragMouseDown;
-                function dragMouseDown() {
-                    console.log('working')
-                    // get the input  height and width :
-                    width = document.getElementById('myinputid'+id).clientWidth;
-                    height = document.getElementById('myinputid'+id).clientHeight;
-                    console.log(width, height)
-                    document.onmouseup = closeDragElement;
-                    // call a function whenever the cursor moves:
-                    document.onmousemove = elementDrag;
-                }
-                function elementDrag() {
-                    // set the element's new position:
-                    document.getElementById('myinputid'+id).style.fontSize = height = height+'px'  
-                    }
-                }
-                function closeDragElement() {
-                    // stop moving when mouse button is released:
-                    document.onmouseup = null;
-                    document.onmousemove = null;
-                    document.onpointerup = null;
-                    document.onpointermove = null
-                    }
-        };
         var textField = (
             <div className='myinputdivid' id={myid}>
-                <textarea  className='add-Text-input' placeholder='Sample Text' id={myinputid} onFocus={onFocus} onBlur={onBlur} ></textarea>
+                <textarea name="text" onInput={onInput} className='add-Text-input' placeholder='Sample Text' id={myinputid} onFocus={onFocus} onBlur={onBlur} ></textarea>
                 <div className='myinputdividhandler1'></div>
                 <div className='myinputdividhandler' onMouseEnter={moveinpudiv} id={myidhandler} ><BsArrowsMove/></div>
-                <div className='myinputdivresizer' id={myresizerid} >< IoIosResize onMouseEnter={onExpand} id={idnum} /></div>
             </div>
         )
         setMemeData(prevMemeData => {
