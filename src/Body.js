@@ -122,10 +122,37 @@ function TextExtended(){
         function onExpand(evt){
             var hover = evt.target;
             var id = hover.id
-            var width = document.getElementById('myinputid'+id).clientX;
-            var height = document.getElementById('myinputid'+id).clientY;
-            console.log(width, height)
+           
             
+            
+
+
+            increaseFontSize(document.getElementById('myinputid'+id))
+            function increaseFontSize(){
+                var width = 0, height = 0
+                document.getElementById(id).onmousedown  = dragMouseDown;
+                function dragMouseDown() {
+                    console.log('working')
+                    // get the input  height and width :
+                    width = document.getElementById('myinputid'+id).clientWidth;
+                    height = document.getElementById('myinputid'+id).clientHeight;
+                    console.log(width, height)
+                    document.onmouseup = closeDragElement;
+                    // call a function whenever the cursor moves:
+                    document.onmousemove = elementDrag;
+                }
+                function elementDrag() {
+                    // set the element's new position:
+                    document.getElementById('myinputid'+id).style.fontSize = height = height+'px'  
+                    }
+                }
+                function closeDragElement() {
+                    // stop moving when mouse button is released:
+                    document.onmouseup = null;
+                    document.onmousemove = null;
+                    document.onpointerup = null;
+                    document.onpointermove = null
+                    }
         };
         var textField = (
             <div className='myinputdivid' id={myid}>
