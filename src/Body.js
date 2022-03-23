@@ -77,6 +77,8 @@ function ImageExtended (){
 
 }
 
+
+
 let inputTextData, setInputTextData, myid, myidhandler, myinputid, myresizerid;
 var idnum = 0
 function TextExtended(){
@@ -101,6 +103,7 @@ function TextExtended(){
         myinputid = "myinputid" + idnum
         myresizerid = "myresizerid" + idnum
         console.log(myid, myidhandler)
+
         function onFocus(evt){
             var clicked = evt.target;
             var clicknum = clicked.id[9]
@@ -108,21 +111,28 @@ function TextExtended(){
             document.getElementById('myinputid'+clicknum).style.border = 'block'
             document.getElementById('handler'+clicknum).style.display = 'flex'
             document.getElementById('myresizerid'+clicknum).style.display = 'flex'
-        }
+        };
         function onBlur(evt){
             var clicked = evt.target;
             var clicknum = clicked.id[9]
             document.getElementById('handler'+clicknum).style.display = 'none'
             document.getElementById('myinputid'+clicknum).style.border = 'none'
             document.getElementById('myresizerid'+clicknum).style.display = 'none'
-        }
-
+        };
+        function onExpand(evt){
+            var hover = evt.target;
+            var id = hover.id
+            var width = document.getElementById('myinputid'+id).clientX;
+            var height = document.getElementById('myinputid'+id).clientY;
+            console.log(width, height)
+            
+        };
         var textField = (
             <div className='myinputdivid' id={myid}>
                 <textarea  className='add-Text-input' placeholder='Sample Text' id={myinputid} onFocus={onFocus} onBlur={onBlur} ></textarea>
                 <div className='myinputdividhandler1'></div>
                 <div className='myinputdividhandler' onMouseEnter={moveinpudiv} id={myidhandler} ><BsArrowsMove/></div>
-                <div className='myinputdivresizer' id={myresizerid}><IoIosResize/></div>
+                <div className='myinputdivresizer' id={myresizerid} >< IoIosResize onMouseEnter={onExpand} id={idnum} /></div>
             </div>
         )
         setMemeData(prevMemeData => {
@@ -147,8 +157,6 @@ function TextExtended(){
             
             var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
             document.getElementById(clicked.id).onmousedown  = dragMouseDown;
-            
-            
         
             function dragMouseDown(e) {
             e = e || window.event;

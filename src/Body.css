@@ -317,7 +317,7 @@
 .add-Text-input {
   height: 100%;
   width: 100%;
-
+  overflow: hidden;
   font-size: 200%;
   margin: auto;
   z-index: 0;
