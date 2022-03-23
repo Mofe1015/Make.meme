@@ -263,7 +263,6 @@
   position: absolute;
   background-color: transparent;
   margin: auto;
-  margin-left: 10px;
   display: flex;
 }
 .myinputdividhandler {
@@ -316,16 +315,14 @@
   width: 15px;
 }
 .add-Text-input {
-  display: flex;
+  height: 100px;
   width: 300px;
-  height: 50px;
   overflow: hidden;
-  font-size: 40px;
+  font-size: 200%;
   margin: auto;
   z-index: 0;
   background-color: transparent;
   border: dashed 1px;
-  align-items: center;
 }
 .add-Text-input:focus {
   outline: dashed 1px;

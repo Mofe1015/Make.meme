@@ -129,9 +129,9 @@ function TextExtended(){
         }
         function onInput(evt){
             var input = evt.target;
-            var id = input.id
-            console.log(id)
-            var element = document.getElementById(id)
+            var inputid = input.id
+            console.log(inputid)
+            var element = document.getElementById(inputid)
             element.style.maxWidth = '600px'
             element.style.height = "";
             element.style.width = "";
