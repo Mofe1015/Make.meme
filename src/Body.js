@@ -83,17 +83,10 @@ let inputTextData, setInputTextData, myid, myidhandler, myinputid, myresizerid;
 var idnum = 0
 function TextExtended(){
     [inputTextData, setInputTextData] = React.useState(
-        {firstText: "", secondText: "", }
+        {fontType: "", fontType: "", }
     );
 
-    function textInputChange(event) {
-        setInputTextData(prevInputTextData => {
-            return {
-                ...prevInputTextData,
-                [event.target.name]: event.target.value
-            }
-        })
-    };
+   
     
     function addText(event){
          
@@ -215,20 +208,8 @@ function TextExtended(){
             </div>
             <div className='nav-Extend-Body'>
                 <form className='nav-Extend-Body'>
-                    <input
-                        className='text-Box'
-                        placeholder='Top Text'
-                        onChange={textInputChange}
-                        name='firstText'
-                        value={inputTextData.firstText}
-                    />
-                    <input
-                        className='text-Box'
-                        placeholder='Bottom Text'
-                        onChange={textInputChange}
-                        name='secondText'
-                        value={inputTextData.secondText }
-                    />
+                 
+                   
                     <button className='add-Text-Btn' type='button' onClick={addText}>Add Text</button>    
                 </form>
                 
