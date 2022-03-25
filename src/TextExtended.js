@@ -1,10 +1,6 @@
 import './App.css';
-import { FaImages } from "react-icons/fa";
-import { GoTextSize, GoSearch } from "react-icons/go";
 import { BsThreeDots, BsArrowsMove } from "react-icons/bs";
 import { MdOutlineArrowBackIosNew, MdClose } from "react-icons/md";
-import { IoIosResize } from "react-icons/io";
-import memesData from "./memesData.js"
 import React from 'react';
 
 
@@ -12,10 +8,8 @@ let inputTextData, setInputTextData, myid, myidhandler, myinputid, myresizerid;
 var idnum = 0
 export default function TextExtended(props){
     [inputTextData, setInputTextData] = React.useState(
-        {fontType: "", fontType: "", }
+        {fontType: "", fontSize: "", }
     );
-
-   
     
     function addText(event){
          
@@ -60,13 +54,18 @@ export default function TextExtended(props){
             element.style.width = element.clientWidth+element.scrollHeight + "px"
             element.style.height = element.scrollHeight + "px"
             
-        }
-
-
-           
+        }      
         var textField = (
             <div className='myinputdivid' id={myid}>
-                <textarea name="text" onInput={onInput} className='add-Text-input' placeholder='Sample Text' id={myinputid} onFocus={onFocus} onBlur={onBlur} ></textarea>
+                <textarea name="text"
+                    style={{fontFamily:inputTextData.fontType}}
+                    onInput={onInput}
+                    className='add-Text-input'
+                    placeholder='Sample Text'
+                    id={myinputid}
+                    onFocus={onFocus}
+                    onBlur={onBlur}
+                ></textarea>
                 <div className='myinputdividhandler1'></div>
                 <div className='myinputdividhandler' onMouseEnter={moveinpudiv} id={myidhandler} ><BsArrowsMove/></div>
             </div>
@@ -81,7 +80,6 @@ export default function TextExtended(props){
         return(myid, myidhandler, myinputid, myresizerid)   
     }
     
-   
     function moveinpudiv(evt){
         var clicked = evt.target;
         var myid1 = "myinputdivid"+clicked.id
@@ -137,8 +135,9 @@ export default function TextExtended(props){
             </div>
             <div className='nav-Extend-Body'>
                 <form className='nav-Extend-Body'>
-                    <div className='font-type'><p>Add Header Text</p></div>
-                   
+                    <div className='font-type' ><p>Add Header Text</p></div>
+                    <div className='font-type'onClick={setInputTextData(inputTextData.fontType='Impact, fantasy')}><p style={{fontFamily:'Impact, fantasy'}} >Add fantasy Text</p></div>
+            
                     <button className='add-Text-Btn' type='button' onClick={addText}>Add Text</button>    
                 </form>
                 

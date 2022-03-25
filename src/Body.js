@@ -91,8 +91,7 @@ function Nav(){
         <TextExtended
             setMemeData = {setMemeData}
             hideExtendNav = {hideExtendNav}
-        />
-        )
+        />)
         showExtendNav()
     };
     function addImage(){
