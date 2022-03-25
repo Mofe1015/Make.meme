@@ -2,9 +2,10 @@ import './App.css';
 import { BsThreeDots, BsArrowsMove } from "react-icons/bs";
 import { MdOutlineArrowBackIosNew, MdClose } from "react-icons/md";
 import React from 'react';
+import memesData from './memesData';
 
 
-let inputTextData, setInputTextData, myid, myidhandler, myinputid, myresizerid;
+let inputTextData, setInputTextData, myid, myidhandler, myinputid, myresizerid, textField;
 var idnum = 0
 export default function TextExtended(props){
     [inputTextData, setInputTextData] = React.useState(
@@ -12,7 +13,7 @@ export default function TextExtended(props){
     );
     
     function addText(event){
-         
+        
         idnum = idnum + 1
         myidhandler ="handler"+ idnum
         myid = "myinputdivid" + myidhandler
@@ -55,7 +56,7 @@ export default function TextExtended(props){
             element.style.height = element.scrollHeight + "px"
             
         }      
-        var textField = (
+         const textField = (
             <div className='myinputdivid' id={myid}>
                 <textarea name="text"
                     style={{fontFamily:inputTextData.fontType}}
@@ -71,12 +72,13 @@ export default function TextExtended(props){
             </div>
         )
         props.setMemeData(prevMemeData => {
+            console.log(prevMemeData.memeText)
             return {
                 ...prevMemeData,
-                memeText: [textField, ...prevMemeData.memeText]
+                memeText: [...prevMemeData.memeText, textField]
             }   
         });
-       
+        
         return(myid, myidhandler, myinputid, myresizerid)   
     }
     
@@ -129,7 +131,16 @@ export default function TextExtended(props){
 
     function setFontType(evt){
         var clicked = evt.target;
-        console.log(clicked.style.fontFamily)
+        var font = clicked.style.fontFamily
+        setInputTextData(prevMemeData => {
+            return {
+                ...prevMemeData,
+                fontType: font
+            }   
+        });
+        setTimeout(addText, 50);
+        
+        
     }
     return(
         <>
