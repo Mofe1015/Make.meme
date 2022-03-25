@@ -126,6 +126,11 @@ export default function TextExtended(props){
             }
         }
     }
+
+    function setFontType(evt){
+        var clicked = evt.target;
+        console.log(clicked.style.fontFamily)
+    }
     return(
         <>
             <div className='nav-Extend-header'>
@@ -135,9 +140,10 @@ export default function TextExtended(props){
             </div>
             <div className='nav-Extend-Body'>
                 <form className='nav-Extend-Body'>
-                    <div className='font-type' ><p>Add Header Text</p></div>
-                    <div className='font-type'onClick={setInputTextData(inputTextData.fontType='Impact, fantasy')}><p style={{fontFamily:'Impact, fantasy'}} >Add fantasy Text</p></div>
-            
+                    <div className='font-type' onClick={setFontType} >Add Header Text</div>
+                    <div className='font-type'onClick={setFontType} style={{fontFamily:'Impact, fantasy'}}>Add fantasy Text</div>
+                    <div className='font-type'onClick={setFontType} style={{fontFamily:'Courier, monospace'}}>Add monospace Text</div>
+                   
                     <button className='add-Text-Btn' type='button' onClick={addText}>Add Text</button>    
                 </form>
                 
