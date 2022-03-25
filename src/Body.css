@@ -142,8 +142,12 @@
   margin: auto;
   border-radius: 3px;
   font-size: 20px;
-  border: 0 !important;
-  background-color: red;
+  padding: 2px;
+  cursor: pointer;
+  background-color: #252935d8;
+}
+.font-type:hover {
+  background-color: #cbcdd334;
 }
 .font-type > * {
   margin-left: auto;
