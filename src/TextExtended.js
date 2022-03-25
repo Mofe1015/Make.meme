@@ -10,7 +10,7 @@ import React from 'react';
 
 let inputTextData, setInputTextData, myid, myidhandler, myinputid, myresizerid;
 var idnum = 0
-export default function TextExtended(){
+export default function TextExtended(props){
     [inputTextData, setInputTextData] = React.useState(
         {fontType: "", fontType: "", }
     );
@@ -71,7 +71,7 @@ export default function TextExtended(){
                 <div className='myinputdividhandler' onMouseEnter={moveinpudiv} id={myidhandler} ><BsArrowsMove/></div>
             </div>
         )
-        setMemeData(prevMemeData => {
+        props.setMemeData(prevMemeData => {
             return {
                 ...prevMemeData,
                 memeText: [textField, ...prevMemeData.memeText]
@@ -132,8 +132,8 @@ export default function TextExtended(){
         <>
             <div className='nav-Extend-header'>
                 <div className='extendedNav-Text-Div' ><p>Text</p></div>
-                <button className='nav-Extend-backBtn' onClick={hideExtendNav}><MdClose className='nav-Extend-backIcon-x'/></button>
-                <button className='nav-Extend-backBtn' onClick={hideExtendNav}><MdOutlineArrowBackIosNew className='nav-Extend-backIcon'/></button>
+                <button className='nav-Extend-backBtn' onClick={props.hideExtendNav}><MdClose className='nav-Extend-backIcon-x'/></button>
+                <button className='nav-Extend-backBtn' onClick={props.hideExtendNav}><MdOutlineArrowBackIosNew className='nav-Extend-backIcon'/></button>
             </div>
             <div className='nav-Extend-Body'>
                 <form className='nav-Extend-Body'>

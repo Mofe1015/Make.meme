@@ -87,7 +87,12 @@ function ImageExtended (){
 function Nav(){
     const [extendedNav, setExtendedNav] = React.useState(<></>)
     function addText(){
-        setExtendedNav(<TextExtended/>)
+        setExtendedNav(
+        <TextExtended
+            setMemeData = {setMemeData}
+            hideExtendNav = {hideExtendNav}
+        />
+        )
         showExtendNav()
     };
     function addImage(){
