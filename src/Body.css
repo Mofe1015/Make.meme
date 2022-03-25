@@ -133,14 +133,21 @@
   flex-direction: column;
   height: 100%;
 }
-.text-Box {
+.font-type {
+  display: flex;
+  align-items: center;
   position: relative;
   width: 250px;
   height: 30px;
   margin: auto;
-  border-radius: 5px;
+  border-radius: 3px;
   font-size: 20px;
   border: 0 !important;
+  background-color: red;
+}
+.font-type > * {
+  margin-left: auto;
+  margin-right: auto;
 }
 .text-Box:focus {
   box-shadow: 0 0 0 0;

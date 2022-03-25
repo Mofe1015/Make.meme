@@ -208,7 +208,7 @@ function TextExtended(){
             </div>
             <div className='nav-Extend-Body'>
                 <form className='nav-Extend-Body'>
-                 
+                    <div className='font-type'><p>Add Header Text</p></div>
                    
                     <button className='add-Text-Btn' type='button' onClick={addText}>Add Text</button>    
                 </form>
