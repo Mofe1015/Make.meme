@@ -1,11 +1,11 @@
 import './App.css';
-import { BsThreeDots, BsArrowsMove } from "react-icons/bs";
+import {  BsArrowsMove } from "react-icons/bs";
 import { MdOutlineArrowBackIosNew, MdClose } from "react-icons/md";
 import React from 'react';
 import memesData from './memesData';
 
 
-let inputTextData, setInputTextData, myid, myidhandler, myinputid, myresizerid, textField;
+let inputTextData, setInputTextData, myid, myidhandler, myinputid, myresizerid ;
 var idnum = 0
 export default function TextExtended(props){
     [inputTextData, setInputTextData] = React.useState(
@@ -19,14 +19,18 @@ export default function TextExtended(props){
         myid = "myinputdivid" + myidhandler
         myinputid = "myinputid" + idnum
         myresizerid = "myresizerid" + idnum
-        console.log(myid, myidhandler)
 
         function onFocus(evt){
             var clicked = evt.target;
             var clicknum = clicked.id[9]
-            console.log(clicked.id[9])
-            document.getElementById('myinputid'+clicknum).style.border = 'block'
+            var textinput = document.getElementById('myinputid'+clicknum)
+            textinput.style.border = 'block'
             document.getElementById('handler'+clicknum).style.display = 'flex'
+            function deleteinput(e){
+               if (e.keyCode == 46) {textinput.remove()}
+            }
+            textinput.addEventListener('keyup', deleteinput)
+
             
         };
         function onBlur(evt){
@@ -40,14 +44,11 @@ export default function TextExtended(props){
             var hover = evt.target;
             var id = hover.id
             var width = document.getElementById('myinputid'+id).clientWidth;
-            var height = document.getElementById('myinputid'+id).clientHeight;
-            console.log(width, height)
-            
+            var height = document.getElementById('myinputid'+id).clientHeight;      
         }
         function onInput(evt){
             var input = evt.target;
             var inputid = input.id
-            console.log(inputid)
             var element = document.getElementById(inputid)
             element.style.maxWidth = '600px'
             element.style.height = "";
@@ -138,7 +139,7 @@ export default function TextExtended(props){
                 fontType: font
             }   
         });
-        setTimeout(addText, 50);
+        setTimeout(addText, 1);
         
         
     }
