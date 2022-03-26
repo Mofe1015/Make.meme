@@ -1,24 +1,13 @@
 import './Body.css';
 import { FaImages } from "react-icons/fa";
-import { GoTextSize, GoSearch } from "react-icons/go";
-import { BsThreeDots, BsArrowsMove } from "react-icons/bs";
-import { MdOutlineArrowBackIosNew, MdClose } from "react-icons/md";
-import { IoIosResize } from "react-icons/io";
-import memesData from "./memesData.js"
+import { GoTextSize } from "react-icons/go";
+import { BsThreeDots } from "react-icons/bs";
 import TextExtended from "./TextExtended.js"
+import ImageExtended from './ImageExtended';
 import React from 'react';
 
 
-function showExtendNav(){   
-    document.getElementById('navExtendiv').style.display = "flex" 
-    document.getElementById("editBoxid").classList.replace('edit-Box-Div', 'edit-Box-Div-small');
-};
 
-function hideExtendNav(){   
-    document.getElementById('navExtendiv').style.display = "none" 
-    document.getElementById("editBoxid").classList.replace( 'edit-Box-Div-small','edit-Box-Div');
-    
-};
 
 
 let memeData, setMemeData;
@@ -36,56 +25,19 @@ function Main(){
 };
 
 
-
-function ImageExtended (){
-    function getMemeImage() {
-        const memesArray = memesData.data.memes
-        const randomNumber = Math.floor(Math.random() * memesArray.length)
-        
-        setMemeData(prevMemeData => {
-            return {
-                ...prevMemeData,
-                memeImage: memesArray[randomNumber].url
-            }
-        })
-    }
-    function clearSearchField(){
-        document.getElementById('searchimageinputid').value= null; 
-    };
-    return(
-        <>
-                <div className='nav-Extend-header'>
-                    <div className='extendedNav-Text-Div' ><p>Images</p></div>
-                    <button className='nav-Extend-backBtn' onClick={hideExtendNav}><MdClose className='nav-Extend-backIcon-x'/></button>
-                    <button className='nav-Extend-backBtn' onClick={hideExtendNav}><MdOutlineArrowBackIosNew className='nav-Extend-backIcon'/></button>
-                </div>
-                <div className='nav-Extend-Body'>
-                    <div className='search-Img-Div'>
-                        <div className='searchbar-div'>
-                            <GoSearch className='search-Img-icon'/>
-                            <input id='searchimageinputid' className='search-Img-Input' placeholder='search'></input>
-                             <button className='clear-SearchField'  onClick={clearSearchField}><MdClose/></button>
-                        </div>
-                        <button className='go-Btn'>
-                            <p>Go</p>
-                        </button>
-                        
-                    </div>
-                    <button className='add-RndmImg-Btn' onClick={getMemeImage}>Add random Image</button>
-                </div>
-        </>
-    )   
-
-}
-
-
-
-
-
-
-
 function Nav(){
     const [extendedNav, setExtendedNav] = React.useState(<></>)
+
+    function showExtendNav(){   
+        document.getElementById('navExtendiv').style.display = "flex" 
+        document.getElementById("editBoxid").classList.replace('edit-Box-Div', 'edit-Box-Div-small');
+    };
+    
+    function hideExtendNav(){   
+        document.getElementById('navExtendiv').style.display = "none" 
+        document.getElementById("editBoxid").classList.replace( 'edit-Box-Div-small','edit-Box-Div');
+        
+    };
     function addText(){
         setExtendedNav(
         <TextExtended
@@ -95,7 +47,11 @@ function Nav(){
         showExtendNav()
     };
     function addImage(){
-        setExtendedNav(<ImageExtended/>)
+        setExtendedNav(
+        <ImageExtended
+            setMemeData = {setMemeData}
+            hideExtendNav = {hideExtendNav}
+        />)
         showExtendNav()
     };
     return(
