@@ -324,14 +324,18 @@
   width: 15px;
 }
 .add-Text-input {
-  height: 100px;
-  width: 300px;
+  text-align: center;
+  height: 50px;
+  width: 320px;
   overflow: hidden;
-  font-size: 200%;
+  font-size: 46px;
   margin: auto;
   z-index: 0;
   background-color: transparent;
   border: dashed 1px;
+}
+.add-Text-input::-webkit-input-placeholder {
+  color: black;
 }
 .add-Text-input:focus {
   outline: dashed 1px;

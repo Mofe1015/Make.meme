@@ -2,7 +2,7 @@ import './App.css';
 import {  BsArrowsMove } from "react-icons/bs";
 import { MdOutlineArrowBackIosNew, MdClose } from "react-icons/md";
 import React from 'react';
-import memesData from './memesData';
+
 
 
 let inputTextData, setInputTextData, myid, myidhandler, myinputid, myresizerid ;
@@ -27,7 +27,7 @@ export default function TextExtended(props){
             textinput.style.border = 'block'
             document.getElementById('handler'+clicknum).style.display = 'flex'
             function deleteinput(e){
-               if (e.keyCode == 46) {textinput.remove()}
+               if (e.keyCode === 46) {textinput.remove()}
             }
             textinput.addEventListener('keyup', deleteinput)
 
@@ -40,12 +40,7 @@ export default function TextExtended(props){
             document.getElementById('myinputid'+clicknum).style.border = 'none'
            
         };
-        function onExpand(evt){
-            var hover = evt.target;
-            var id = hover.id
-            var width = document.getElementById('myinputid'+id).clientWidth;
-            var height = document.getElementById('myinputid'+id).clientHeight;      
-        }
+        
         function onInput(evt){
             var input = evt.target;
             var inputid = input.id
