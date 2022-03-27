@@ -7,7 +7,7 @@ import React from 'react';
 
 let inputTextData, setInputTextData, myid, myidhandler, myinputid, myresizerid ;
 var idnum = 0
-export default function TextExtended(props){
+function TextExtended(props){
     [inputTextData, setInputTextData] = React.useState(
         {fontType: "", fontSize: "", }
     );
@@ -68,14 +68,11 @@ export default function TextExtended(props){
             </div>
         )
         props.setMemeData(prevMemeData => {
-            console.log(prevMemeData.memeText)
             return {
                 ...prevMemeData,
                 memeText: [...prevMemeData.memeText, textField]
             }   
         });
-        
-        return(myid, myidhandler, myinputid, myresizerid)   
     }
     
     function moveinpudiv(evt){
@@ -157,3 +154,5 @@ export default function TextExtended(props){
             </div>
         </>    
     )};
+
+export default TextExtended;

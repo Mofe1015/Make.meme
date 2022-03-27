@@ -4,7 +4,7 @@ import { MdOutlineArrowBackIosNew, MdClose } from "react-icons/md";
 import memesData from "./memesData.js"
 import React from 'react';
 
-export default function ImageExtended (props){
+ function ImageExtended (props){
     function getMemeImage() {
         const memesArray = memesData.data.memes
         const randomNumber = Math.floor(Math.random() * memesArray.length)
@@ -44,3 +44,4 @@ export default function ImageExtended (props){
     )   
 
 }
+export default ImageExtended;
