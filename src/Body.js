@@ -6,10 +6,6 @@ import TextExtended from "./TextExtended.js"
 import ImageExtended from './ImageExtended';
 import React from 'react';
 
-
-
-
-
 let memeData, setMemeData;
 function Main(){
     [memeData, setMemeData] = React.useState({memeImage: "", memeText: []})
@@ -79,7 +75,6 @@ function Nav(){
         </>   
     )
 };
-
 
 function Body (){   
     return(
