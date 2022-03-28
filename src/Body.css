@@ -24,6 +24,7 @@
   flex-direction: column;
   align-items: center;
   overflow: hidden;
+  overflow: hidden;
 }
 
 .edit-Box-Div {
@@ -37,6 +38,7 @@
   margin: auto;
   display: flex;
   align-items: center;
+  overflow: hidden;
 }
 .edit-Box-Div-small {
   background-color: white;

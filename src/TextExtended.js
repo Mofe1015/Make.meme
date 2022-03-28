@@ -5,7 +5,7 @@ import React from 'react';
 
 
 
-let inputTextData, setInputTextData, myid, myidhandler, myinputid, myresizerid ;
+let inputTextData, setInputTextData, myid, myidhandler,myidhandler1, myinputid, myresizerid ;
 var idnum = 0
 function TextExtended(props){
     [inputTextData, setInputTextData] = React.useState(
@@ -16,6 +16,7 @@ function TextExtended(props){
         
         idnum = idnum + 1
         myidhandler ="handler"+ idnum
+        myidhandler1 ="handler1"+ idnum
         myid = "myinputdivid" + myidhandler
         myinputid = "myinputid" + idnum
         myresizerid = "myresizerid" + idnum
@@ -25,6 +26,7 @@ function TextExtended(props){
             var clicknum = clicked.id[9]
             var textinput = document.getElementById('myinputid'+clicknum)
             textinput.style.border = 'block'
+            document.getElementById('handler1'+clicknum).style.display = 'flex'
             document.getElementById('handler'+clicknum).style.display = 'flex'
             function deleteinput(e){
                if (e.keyCode === 46) {textinput.remove()}
@@ -37,6 +39,7 @@ function TextExtended(props){
             var clicked = evt.target;
             var clicknum = clicked.id[9]
             document.getElementById('handler'+clicknum).style.display = 'none'
+            document.getElementById('handler1'+clicknum).style.display = 'none'
             document.getElementById('myinputid'+clicknum).style.border = 'none'
            
         };
@@ -63,7 +66,7 @@ function TextExtended(props){
                     onFocus={onFocus}
                     onBlur={onBlur}
                 ></textarea>
-                <div className='myinputdividhandler1'><BsArrowsMove/></div>
+                <div className='myinputdividhandler1' id={myidhandler1}><BsArrowsMove/></div>
                 <div className='myinputdividhandler' onMouseEnter={moveinpudiv} id={myidhandler} ></div>
             </div>
         )
@@ -78,10 +81,7 @@ function TextExtended(props){
     function moveinpudiv(evt){
 
         var clicked = evt.target;
-        console.log(clicked)
         var myid1 = "myinputdivid"+clicked.id
-       
-
         dragElement(document.getElementById(myid1));
         function dragElement(elmnt) {
             
