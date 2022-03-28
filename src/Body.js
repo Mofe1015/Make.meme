@@ -5,15 +5,18 @@ import { BsThreeDots } from "react-icons/bs";
 import TextExtended from "./TextExtended.js"
 import ImageExtended from './ImageExtended';
 import React from 'react';
-
+function imageOnCLick(){
+    console.log("image cluicked")
+}
 let memeData, setMemeData;
 function Main(){
     [memeData, setMemeData] = React.useState({memeImage: "", memeText: []})
     return(
         <div className='body-Body'>
                 <div id='editBoxid' className='edit-Box-Div' >
-                    <div className='add-Text-inputDiv' >{memeData.memeText}</div>
-                    <img src={memeData.memeImage} className="meme-image" />
+                    {memeData.memeText}
+                    <img onClick={imageOnCLick} src={memeData.memeImage} className="meme-image" />
+                    
                 </div>               
         </div>
         

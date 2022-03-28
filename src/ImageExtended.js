@@ -16,6 +16,7 @@ import React from 'react';
             }
         })
     }
+    
     function clearSearchField(){
         document.getElementById('searchimageinputid').value= null; 
     };
