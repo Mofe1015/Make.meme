@@ -63,8 +63,8 @@ function TextExtended(props){
                     onFocus={onFocus}
                     onBlur={onBlur}
                 ></textarea>
-                <div className='myinputdividhandler1'></div>
-                <div className='myinputdividhandler' onMouseEnter={moveinpudiv} id={myidhandler} ><BsArrowsMove/></div>
+                <div className='myinputdividhandler1'><BsArrowsMove/></div>
+                <div className='myinputdividhandler' onMouseEnter={moveinpudiv} id={myidhandler} ></div>
             </div>
         )
         props.setMemeData(prevMemeData => {
@@ -76,11 +76,12 @@ function TextExtended(props){
     }
     
     function moveinpudiv(evt){
+
         var clicked = evt.target;
+        console.log(clicked)
         var myid1 = "myinputdivid"+clicked.id
        
 
-        console.log(clicked.id)
         dragElement(document.getElementById(myid1));
         function dragElement(elmnt) {
             
