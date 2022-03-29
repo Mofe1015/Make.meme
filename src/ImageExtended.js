@@ -5,9 +5,13 @@ import memesData from "./memesData.js"
 import React from 'react';
 
  function ImageExtended (props){
-     
+
     function imageOnCLick(){
-        console.log("image clicked")
+        props.setEditType(()=>{
+            return(
+                <div>image</div>
+            )
+        })
     }
     function clearSearchField(){
         document.getElementById('searchimageinputid').value= null; 
@@ -15,14 +19,13 @@ import React from 'react';
     function getMemeImage() {
         const memesArray = memesData.data.memes
         const randomNumber = Math.floor(Math.random() * memesArray.length)
-        
+        var memeimage = <img onClick={imageOnCLick} src={ memesArray[randomNumber].url} className="meme-image" />
         props.setMemeData(prevMemeData => {
-            var memeimage = <img onClick={imageOnCLick} src={ memesArray[randomNumber].url} className="meme-image" />
+            
             return {
                 ...prevMemeData,
                 memeImage:memeimage
                 
-
             }
         })
     }

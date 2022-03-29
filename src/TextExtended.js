@@ -33,6 +33,11 @@ function TextExtended(props){
             }
             textinput.addEventListener('keyup', deleteinput)
 
+            props.setEditType(()=>{
+                return(
+                    <div>text</div>
+                )
+            })
             
         };
         function onBlur(evt){

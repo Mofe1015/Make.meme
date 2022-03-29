@@ -20,6 +20,17 @@ function Main(){
     )
 };
 
+let editType, setEditType;
+function EditNav(){
+    [editType, setEditType] = React.useState(<></>)
+    return(
+        <>
+            <div className='edit-Nav-Div'>
+                {editType}
+            </div>
+        </>
+    )
+}
 
 function Nav(){
     const [extendedNav, setExtendedNav] = React.useState(<></>)
@@ -39,6 +50,7 @@ function Nav(){
         <TextExtended
             setMemeData = {setMemeData}
             hideExtendNav = {hideExtendNav}
+            setEditType = {setEditType}
         />)
         showExtendNav()
     };
@@ -47,6 +59,7 @@ function Nav(){
         <ImageExtended
             setMemeData = {setMemeData}
             hideExtendNav = {hideExtendNav}
+            setEditType = {setEditType}
         />)
         showExtendNav()
     };
@@ -75,17 +88,8 @@ function Nav(){
         </>   
     )
 };
-let editType, setEditType;
-function EditNav(){
-    [editType, setEditType] = React.useState(<></>)
-    return(
-        <>
-            <div className='edit-Nav-Div'>
-                {editType}
-            </div>
-        </>
-    )
-}
+
+
 function Body (){   
     return(
         <div className='Body'>
