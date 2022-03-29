@@ -4,12 +4,27 @@ import { MdOutlineArrowBackIosNew, MdClose } from "react-icons/md";
 import memesData from "./memesData.js"
 import React from 'react';
 
+
+function ImageEditNav(){
+    return(
+        <div>
+            <div className='nav-Edit-header'>
+                Image
+            </div>
+            <div className='nav-Edit-body'>
+                Image body
+            </div>
+        </div>
+    )
+};
+
+
  function ImageExtended (props){
 
     function imageOnCLick(){
         props.setEditType(()=>{
             return(
-                <div>image</div>
+                <ImageEditNav/>
             )
         })
     }

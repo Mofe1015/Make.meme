@@ -3,7 +3,18 @@ import {  BsArrowsMove } from "react-icons/bs";
 import { MdOutlineArrowBackIosNew, MdClose } from "react-icons/md";
 import React from 'react';
 
-
+function TextEditNav(){
+    return(
+        <div>
+            <div className='nav-Edit-header'>
+                Text
+            </div>
+            <div className='nav-Edit-body'>
+                Text body
+            </div>
+        </div>
+    )
+}
 
 let inputTextData, setInputTextData, myid, myidhandler,myidhandler1, myinputid, myresizerid ;
 var idnum = 0
@@ -35,7 +46,7 @@ function TextExtended(props){
 
             props.setEditType(()=>{
                 return(
-                    <div>text</div>
+                    <TextEditNav/>
                 )
             })
             
