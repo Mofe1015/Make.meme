@@ -5,21 +5,28 @@ import memesData from "./memesData.js"
 import React from 'react';
 
  function ImageExtended (props){
+     
+    function imageOnCLick(){
+        console.log("image clicked")
+    }
+    function clearSearchField(){
+        document.getElementById('searchimageinputid').value= null; 
+    };
     function getMemeImage() {
         const memesArray = memesData.data.memes
         const randomNumber = Math.floor(Math.random() * memesArray.length)
         
         props.setMemeData(prevMemeData => {
+            var memeimage = <img onClick={imageOnCLick} src={ memesArray[randomNumber].url} className="meme-image" />
             return {
                 ...prevMemeData,
-                memeImage: memesArray[randomNumber].url
+                memeImage:memeimage
+                
+
             }
         })
     }
     
-    function clearSearchField(){
-        document.getElementById('searchimageinputid').value= null; 
-    };
     return(
         <>
                 <div className='nav-Extend-header'>

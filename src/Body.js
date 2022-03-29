@@ -5,9 +5,7 @@ import { BsThreeDots } from "react-icons/bs";
 import TextExtended from "./TextExtended.js"
 import ImageExtended from './ImageExtended';
 import React from 'react';
-function imageOnCLick(){
-    console.log("image cluicked")
-}
+
 let memeData, setMemeData;
 function Main(){
     [memeData, setMemeData] = React.useState({memeImage: "", memeText: []})
@@ -15,8 +13,7 @@ function Main(){
         <div className='body-Body'>
                 <div id='editBoxid' className='edit-Box-Div' >
                     {memeData.memeText}
-                    <img onClick={imageOnCLick} src={memeData.memeImage} className="meme-image" />
-                    
+                    {memeData.memeImage}
                 </div>               
         </div>
         
@@ -78,12 +75,13 @@ function Nav(){
         </>   
     )
 };
-
+let editType, setEditType;
 function EditNav(){
+    [editType, setEditType] = React.useState(<></>)
     return(
         <>
             <div className='edit-Nav-Div'>
-
+                {editType}
             </div>
         </>
     )
