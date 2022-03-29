@@ -41,6 +41,7 @@ function TextExtended(props){
             document.getElementById('handler'+clicknum).style.display = 'none'
             document.getElementById('handler1'+clicknum).style.display = 'none'
             document.getElementById('myinputid'+clicknum).style.border = 'none'
+            
            
         };
         
@@ -108,6 +109,7 @@ function TextExtended(props){
             pos3 = e.clientX;
             pos4 = e.clientY;
             // set the element's new position:
+            
             elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
             elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
             
@@ -115,6 +117,10 @@ function TextExtended(props){
         
             function closeDragElement() {
             // stop moving when mouse button is released:
+           
+            
+            
+
             document.onmouseup = null;
             document.onmousemove = null;
             document.onpointerup = null;

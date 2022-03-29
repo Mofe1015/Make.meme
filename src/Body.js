@@ -79,11 +79,21 @@ function Nav(){
     )
 };
 
+function EditNav(){
+    return(
+        <>
+            <div className='edit-Nav-Div'>
+
+            </div>
+        </>
+    )
+}
 function Body (){   
     return(
         <div className='Body'>
            <Nav/>
            <Main/>
+           <EditNav/>
         </div>
     )
 };
