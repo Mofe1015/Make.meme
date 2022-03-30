@@ -4,6 +4,10 @@ import { MdOutlineArrowBackIosNew, MdClose } from "react-icons/md";
 import React from 'react';
 
 function TextEditNav(){
+    function changeColor(evt){
+        var textColor = evt.target.style.backgroundColor
+        console.log(textColor)
+    }
     return(
         <div>
             <div className='nav-Edit-header'>
@@ -20,11 +24,11 @@ function TextEditNav(){
                         <p>Black</p>
                     </div>
                         <div className='edit-Text-color-Div'>
-                            <div className='edit-Text-color' style={{backgroundColor: "white"}} ></div>
-                            <div className='edit-Text-color' style={{backgroundColor: "red"}} ></div>
-                            <div className='edit-Text-color' style={{backgroundColor: "yellow"}} ></div>
-                            <div className='edit-Text-color' style={{backgroundColor: "green"}} ></div>
-                            <div className='edit-Text-color' style={{backgroundColor: "blue"}} ></div>
+                            <div onClick={changeColor}  className='edit-Text-color' style={{backgroundColor: "white"}} ></div>
+                            <div onClick={changeColor} className='edit-Text-color' style={{backgroundColor: "red"}} ></div>
+                            <div onClick={changeColor} className='edit-Text-color' style={{backgroundColor: "yellow"}} ></div>
+                            <div onClick={changeColor} className='edit-Text-color' style={{backgroundColor: "green"}} ></div>
+                            <div onClick={changeColor} className='edit-Text-color' style={{backgroundColor: "blue"}} ></div>
                         </div>
                 </div>
             </div>
