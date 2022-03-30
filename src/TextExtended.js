@@ -3,12 +3,25 @@ import {  BsArrowsMove } from "react-icons/bs";
 import { MdOutlineArrowBackIosNew, MdClose } from "react-icons/md";
 import React from 'react';
 
+let changeColor
 function TextEditNav(props){
-   
-
+    const [currentTextCol, setCurrentTextCor] = React.useState('black')
+    
     function changeColor(evt){
         var textColor = evt.target.style.backgroundColor
         props.textinput.style.color = textColor
+        console.log(props.textinput.style.color)
+        var currentColor = props.textinput.style.color
+        function setColor(){
+            setCurrentTextCor(()=>{
+                return(
+                    currentColor
+                )
+            })
+        }
+        setColor()
+        props.textinput.onfocus = setColor;
+
     }
     return(
         <div>
@@ -22,8 +35,8 @@ function TextEditNav(props){
                 <div className='nav-Edit-text'>
                     <p>TEXT-COLOR</p>
                     <div className='current-Text-Color'>
-                        <div className='edit-Text-color' style={{backgroundColor: "Black"}} ></div>
-                        <p>Black</p>
+                        <div className='edit-Text-color' style={{backgroundColor: currentTextCol}} ></div>
+                        <p>{currentTextCol}</p>
                     </div>
                         <div className='edit-Text-color-Div'>
                             <div onClick={changeColor}  className='edit-Text-color' style={{backgroundColor: "white"}} ></div>
@@ -53,7 +66,6 @@ function TextExtended(props){
         myid = "myinputdivid" + myidhandler
         myinputid = "myinputid" + idnum
         myresizerid = "myresizerid" + idnum
-
         function onFocus(evt){
             var clicked = evt.target;
             var clicknum = clicked.id[9]
