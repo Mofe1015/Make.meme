@@ -4,13 +4,11 @@ import { MdOutlineArrowBackIosNew, MdClose } from "react-icons/md";
 import React from 'react';
 
 function TextEditNav(props){
+   
+
     function changeColor(evt){
         var textColor = evt.target.style.backgroundColor
         props.textinput.style.color = textColor
-        console.log(textColor)
-        console.log(props.textinput)
-        console.log( props.textinput.placeholder.color)
-
     }
     return(
         <div>
@@ -92,8 +90,8 @@ function TextExtended(props){
             var inputid = input.id
             var element = document.getElementById(inputid)
             element.style.maxWidth = '600px'
-            element.style.height = "";
-            element.style.width = "";
+            element.style.width=""
+            element.style.height=""
             element.style.width = element.clientWidth+element.scrollHeight + "px"
             element.style.height = element.scrollHeight + "px"
             
@@ -104,11 +102,10 @@ function TextExtended(props){
                     style={{fontFamily:inputTextData.fontType}}
                     onInput={onInput}
                     className='add-Text-input'
-                    placeholder='Sample Text'
                     id={myinputid}
                     onFocus={onFocus}
                     onBlur={onBlur}
-                ></textarea>
+                >Sample Text</textarea>
                 <div className='myinputdividhandler1' id={myidhandler1}><BsArrowsMove/></div>
                 <div className='myinputdividhandler' onMouseEnter={moveinpudiv} id={myidhandler} ></div>
             </div>

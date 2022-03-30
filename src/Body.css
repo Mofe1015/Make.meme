@@ -404,9 +404,7 @@
   background-color: transparent;
   border: dashed 1px black;
 }
-.add-Text-input::-webkit-input-placeholder {
-  color: black;
-}
+
 .add-Text-input:focus {
   outline: dashed 1px black;
 }
