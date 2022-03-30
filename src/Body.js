@@ -51,6 +51,7 @@ function Nav(){
             setMemeData = {setMemeData}
             hideExtendNav = {hideExtendNav}
             setEditType = {setEditType}
+            extendedNav = {extendedNav}
         />)
         showExtendNav()
     };
@@ -60,6 +61,7 @@ function Nav(){
             setMemeData = {setMemeData}
             hideExtendNav = {hideExtendNav}
             setEditType = {setEditType}
+            extendedNav = {extendedNav}
         />)
         showExtendNav()
     };

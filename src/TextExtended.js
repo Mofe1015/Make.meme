@@ -49,8 +49,9 @@ let inputTextData, setInputTextData, myid, myidhandler,myidhandler1, myinputid, 
 var idnum = 0
 function TextExtended(props){
     [inputTextData, setInputTextData] = React.useState(
-        {fontType: "", fontSize: "", fontColor: "black" }
+        {fontType: "", fontSize: "", fontColor: "" }
     );
+    
     
     function addText(event){
         
@@ -60,6 +61,13 @@ function TextExtended(props){
         myid = "myinputdivid" + myidhandler
         myinputid = "myinputid" + idnum
         myresizerid = "myresizerid" + idnum
+
+        setInputTextData(prevMemeData => {
+            return {
+                ...prevMemeData,
+                fontColor: 'black'
+            }   
+        });
         
         function onFocus(evt){
             var clicked = evt.target;
@@ -72,11 +80,10 @@ function TextExtended(props){
                if (e.keyCode === 46) {textinput.remove()}
             }
             textinput.addEventListener('keyup', deleteinput)
-            if (textinput.style.color === '') {textinput.style.color='black'}
-            console.log(textinput.style.color)
+            
             function setColor(){
+                if (textinput.style.color === '') {textinput.style.color='black'}
                 var currentColor =  textinput.style.color
-                console.log(currentColor)
                 setInputTextData(prevMemeData => {
                     return {
                         ...prevMemeData,
