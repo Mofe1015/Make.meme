@@ -5,22 +5,16 @@ import React from 'react';
 
 let changeColor
 function TextEditNav(props){
-    const [currentTextCol, setCurrentTextCor] = React.useState('black')
     
     function changeColor(evt){
         var textColor = evt.target.style.backgroundColor
+        props.textinput.focus()
         props.textinput.style.color = textColor
         console.log(props.textinput.style.color)
-        var currentColor = props.textinput.style.color
-        function setColor(){
-            setCurrentTextCor(()=>{
-                return(
-                    currentColor
-                )
-            })
-        }
-        setColor()
-        props.textinput.onfocus = setColor;
+        
+        
+        props.setColor()
+        
 
     }
     return(
@@ -35,8 +29,8 @@ function TextEditNav(props){
                 <div className='nav-Edit-text'>
                     <p>TEXT-COLOR</p>
                     <div className='current-Text-Color'>
-                        <div className='edit-Text-color' style={{backgroundColor: currentTextCol}} ></div>
-                        <p>{currentTextCol}</p>
+                        <div className='edit-Text-color' style={{backgroundColor: props.currentColor}} ></div>
+                        <p>{props.currentColor}</p>
                     </div>
                         <div className='edit-Text-color-Div'>
                             <div onClick={changeColor}  className='edit-Text-color' style={{backgroundColor: "white"}} ></div>
@@ -55,7 +49,7 @@ let inputTextData, setInputTextData, myid, myidhandler,myidhandler1, myinputid, 
 var idnum = 0
 function TextExtended(props){
     [inputTextData, setInputTextData] = React.useState(
-        {fontType: "", fontSize: "", }
+        {fontType: "", fontSize: "", fontColor: "black" }
     );
     
     function addText(event){
@@ -66,6 +60,7 @@ function TextExtended(props){
         myid = "myinputdivid" + myidhandler
         myinputid = "myinputid" + idnum
         myresizerid = "myresizerid" + idnum
+        
         function onFocus(evt){
             var clicked = evt.target;
             var clicknum = clicked.id[9]
@@ -77,11 +72,26 @@ function TextExtended(props){
                if (e.keyCode === 46) {textinput.remove()}
             }
             textinput.addEventListener('keyup', deleteinput)
+            if (textinput.style.color === '') {textinput.style.color='black'}
+            console.log(textinput.style.color)
+            function setColor(){
+                var currentColor =  textinput.style.color
+                console.log(currentColor)
+                setInputTextData(prevMemeData => {
+                    return {
+                        ...prevMemeData,
+                        fontColor: currentColor
+                    }   
+                });
+            }
+            setColor()
 
             props.setEditType(()=>{
                 return(
                     <TextEditNav
                         textinput= {textinput}
+                        currentColor = {inputTextData.fontColor}
+                        setColor = {setColor}
                     />
                 )
             })
@@ -107,7 +117,18 @@ function TextExtended(props){
             element.style.width = element.clientWidth+element.scrollHeight + "px"
             element.style.height = element.scrollHeight + "px"
             
-        }      
+        }   
+        
+        function setColor(evt){
+        var currentColor =  evt.target.style.color
+        setInputTextData(prevMemeData => {
+            return {
+                ...prevMemeData,
+                fontColor: currentColor
+            }   
+        });
+        onFocus()
+    }
          const textField = (
             <div className='myinputdivid' id={myid}>
                 <textarea name="text"
@@ -122,12 +143,15 @@ function TextExtended(props){
                 <div className='myinputdividhandler' onMouseEnter={moveinpudiv} id={myidhandler} ></div>
             </div>
         )
+
         props.setMemeData(prevMemeData => {
             return {
                 ...prevMemeData,
                 memeText: [...prevMemeData.memeText, textField]
             }   
         });
+
+        document.getElementById('myinputid'+idnum).focus()
     }
     
     function moveinpudiv(evt){
@@ -191,8 +215,9 @@ function TextExtended(props){
         });
         setTimeout(addText, 1);
         
-        
     }
+
+    
     return(
         <>
             <div className='nav-Extend-header'>

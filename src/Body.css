@@ -179,7 +179,7 @@
 }
 .current-Text-Color > p {
   margin: 0;
-  padding-left: 20px;
+  padding-left: 10px;
 }
 .current-Text-Color > div {
   width: 20px;
@@ -403,6 +403,7 @@
   z-index: 0;
   background-color: transparent;
   border: dashed 1px black;
+  color: black;
 }
 
 .add-Text-input:focus {
