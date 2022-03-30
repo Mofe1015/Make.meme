@@ -15,6 +15,17 @@ function TextEditNav(){
                 </div>
                 <div className='nav-Edit-text'>
                     <p>TEXT-COLOR</p>
+                    <div className='current-Text-Color'>
+                        <div className='edit-Text-color' style={{backgroundColor: "Black"}} ></div>
+                        <p>Black</p>
+                    </div>
+                        <div className='edit-Text-color-Div'>
+                            <div className='edit-Text-color' style={{backgroundColor: "white"}} ></div>
+                            <div className='edit-Text-color' style={{backgroundColor: "red"}} ></div>
+                            <div className='edit-Text-color' style={{backgroundColor: "yellow"}} ></div>
+                            <div className='edit-Text-color' style={{backgroundColor: "green"}} ></div>
+                            <div className='edit-Text-color' style={{backgroundColor: "blue"}} ></div>
+                        </div>
                 </div>
             </div>
         </div>

@@ -166,10 +166,43 @@
 .nav-Edit-text > p {
   color: grey;
   margin: 0px;
+  margin-bottom: 10px;
   padding: 0px;
   font-size: 15px;
 }
-
+.current-Text-Color {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  margin-left: 0;
+  margin-bottom: 10px;
+}
+.current-Text-Color > p {
+  margin: 0;
+  padding-left: 20px;
+}
+.current-Text-Color > div {
+  width: 20px;
+  height: 20px;
+}
+.edit-Text-color-Div {
+  width: 18vw;
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+.edit-Text-color {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: auto;
+  margin-left: 0px;
+}
+.edit-Text-color:hover {
+  width: 20px;
+  height: 20px;
+}
 .font-type {
   display: flex;
   align-items: center;
