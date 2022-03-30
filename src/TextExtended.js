@@ -10,7 +10,12 @@ function TextEditNav(){
                 Text
             </div>
             <div className='nav-Edit-body'>
-                Text body
+                <div className='nav-Edit-text'>
+                    <p>FONT</p>
+                </div>
+                <div className='nav-Edit-text'>
+                    <p>TEXT-COLOR</p>
+                </div>
             </div>
         </div>
     )

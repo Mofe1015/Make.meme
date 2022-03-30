@@ -21,7 +21,11 @@ function ImageEditNav(){
 
  function ImageExtended (props){
 
-    function imageOnCLick(){
+    function imageOnCLick(evt){
+        var imageid = evt.target.id
+        var image = document.getElementById(imageid)
+        console.log(image)
+        
         props.setEditType(()=>{
             return(
                 <ImageEditNav/>
@@ -34,13 +38,12 @@ function ImageEditNav(){
     function getMemeImage() {
         const memesArray = memesData.data.memes
         const randomNumber = Math.floor(Math.random() * memesArray.length)
-        var memeimage = <img onClick={imageOnCLick} src={ memesArray[randomNumber].url} className="meme-image" />
+        var memeimage = <img id='imageid' onClick={imageOnCLick} src={ memesArray[randomNumber].url} className="meme-image" />
         props.setMemeData(prevMemeData => {
             
             return {
                 ...prevMemeData,
                 memeImage:memeimage
-                
             }
         })
     }

@@ -149,12 +149,27 @@
   justify-content: center;
 }
 .nav-Edit-body {
-  background-color: green;
+  background-color: transparent;
   width: 18vw;
   display: flex;
   flex-direction: column;
   height: 100%;
 }
+.nav-Edit-text {
+  background-color: transparent;
+  width: 18vw;
+  display: flex;
+  flex-direction: column;
+  height: 20%;
+  padding: 10px;
+}
+.nav-Edit-text > p {
+  color: grey;
+  margin: 0px;
+  padding: 0px;
+  font-size: 15px;
+}
+
 .font-type {
   display: flex;
   align-items: center;
