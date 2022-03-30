@@ -3,10 +3,14 @@ import {  BsArrowsMove } from "react-icons/bs";
 import { MdOutlineArrowBackIosNew, MdClose } from "react-icons/md";
 import React from 'react';
 
-function TextEditNav(){
+function TextEditNav(props){
     function changeColor(evt){
         var textColor = evt.target.style.backgroundColor
+        props.textinput.style.color = textColor
         console.log(textColor)
+        console.log(props.textinput)
+        console.log( props.textinput.placeholder.color)
+
     }
     return(
         <div>
@@ -66,7 +70,9 @@ function TextExtended(props){
 
             props.setEditType(()=>{
                 return(
-                    <TextEditNav/>
+                    <TextEditNav
+                        textinput= {textinput}
+                    />
                 )
             })
             
