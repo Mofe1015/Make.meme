@@ -7,13 +7,10 @@ let changeColor
 function TextEditNav(props){
     
     function changeColor(evt){
-        var textColor = evt.target.style.backgroundColor
         props.textinput.focus()
+        var textColor = evt.target.style.backgroundColor
         props.textinput.style.color = textColor
-        console.log(props.textinput.style.color)
-        
-        
-        props.setColor()
+       
         
 
     }
@@ -29,8 +26,8 @@ function TextEditNav(props){
                 <div className='nav-Edit-text'>
                     <p>TEXT-COLOR</p>
                     <div className='current-Text-Color'>
-                        <div className='edit-Text-color' style={{backgroundColor: props.currentColor}} ></div>
-                        <p>{props.currentColor}</p>
+                        <div className='edit-Text-color' style={{backgroundColor: props.currentColorset}} ></div>
+                        <p>{props.currentColorset}</p>
                     </div>
                         <div className='edit-Text-color-Div'>
                             <div onClick={changeColor}  className='edit-Text-color' style={{backgroundColor: "white"}} ></div>
@@ -49,9 +46,8 @@ let inputTextData, setInputTextData, myid, myidhandler,myidhandler1, myinputid, 
 var idnum = 0
 function TextExtended(props){
     [inputTextData, setInputTextData] = React.useState(
-        {fontType: "", fontSize: "", fontColor: "" }
+        {fontType: "", fontSize: "", fontColor: "black" }
     );
-    
     
     function addText(event){
         
@@ -72,6 +68,7 @@ function TextExtended(props){
         function onFocus(evt){
             var clicked = evt.target;
             var clicknum = clicked.id[9]
+            
             var textinput = document.getElementById('myinputid'+clicknum)
             textinput.style.border = 'block'
             document.getElementById('handler1'+clicknum).style.display = 'flex'
@@ -81,27 +78,26 @@ function TextExtended(props){
             }
             textinput.addEventListener('keyup', deleteinput)
             
-            function setColor(){
+            function setColor(){ 
                 if (textinput.style.color === '') {textinput.style.color='black'}
-                var currentColor =  textinput.style.color
-                setInputTextData(prevMemeData => {
-                    return {
-                        ...prevMemeData,
-                        fontColor: currentColor
-                    }   
-                });
             }
             setColor()
 
+
             props.setEditType(()=>{
+                var currentColor =  textinput.style.color
+                console.log(currentColor)
                 return(
                     <TextEditNav
                         textinput= {textinput}
-                        currentColor = {inputTextData.fontColor}
+                        currentColorset = {currentColor}
                         setColor = {setColor}
                     />
                 )
             })
+            
+            
+           
             
         };
         function onBlur(evt){
@@ -126,16 +122,8 @@ function TextExtended(props){
             
         }   
         
-        function setColor(evt){
-        var currentColor =  evt.target.style.color
-        setInputTextData(prevMemeData => {
-            return {
-                ...prevMemeData,
-                fontColor: currentColor
-            }   
-        });
-        onFocus()
-    }
+      
+    
          const textField = (
             <div className='myinputdivid' id={myid}>
                 <textarea name="text"
