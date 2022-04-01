@@ -10,9 +10,6 @@ function TextEditNav(props){
         props.textinput.focus()
         var textColor = evt.target.style.backgroundColor
         props.textinput.style.color = textColor
-       
-        
-
     }
     return(
         <div>
@@ -25,17 +22,21 @@ function TextEditNav(props){
                 </div>
                 <div className='nav-Edit-text'>
                     <p>TEXT-COLOR</p>
+                    <div className='text-Input-Color-Div'>
+                        <input className='text-Input-Color'></input>
+
+                    </div>
                     <div className='current-Text-Color'>
                         <div className='edit-Text-color' style={{backgroundColor: props.currentColorset}} ></div>
                         <p>{props.currentColorset}</p>
                     </div>
-                        <div className='edit-Text-color-Div'>
-                            <div onClick={changeColor}  className='edit-Text-color' style={{backgroundColor: "white"}} ></div>
-                            <div onClick={changeColor} className='edit-Text-color' style={{backgroundColor: "red"}} ></div>
-                            <div onClick={changeColor} className='edit-Text-color' style={{backgroundColor: "yellow"}} ></div>
-                            <div onClick={changeColor} className='edit-Text-color' style={{backgroundColor: "green"}} ></div>
-                            <div onClick={changeColor} className='edit-Text-color' style={{backgroundColor: "blue"}} ></div>
-                        </div>
+                    <div className='edit-Text-color-Div'>
+                        <div onClick={changeColor}  className='edit-Text-color' style={{backgroundColor: "white"}} ></div>
+                        <div onClick={changeColor} className='edit-Text-color' style={{backgroundColor: "red"}} ></div>
+                        <div onClick={changeColor} className='edit-Text-color' style={{backgroundColor: "yellow"}} ></div>
+                        <div onClick={changeColor} className='edit-Text-color' style={{backgroundColor: "green"}} ></div>
+                        <div onClick={changeColor} className='edit-Text-color' style={{backgroundColor: "blue"}} ></div>
+                    </div>
                 </div>
             </div>
         </div>

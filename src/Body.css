@@ -170,15 +170,45 @@
   padding: 0px;
   font-size: 15px;
 }
+.text-Input-Color-Div{
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  max-width: 50%;
+  min-width: 50%;
+  height: 20%;
+  max-height: 20%;
+  min-height: 20%;
+  background-color: #3a3e49;
+  padding-left: 5px;
+  border-radius: 4px;
+  margin: auto;
+  margin-left: 0px;
+}
+.text-Input-Color {
+  margin-top: auto;
+  margin-bottom: auto;
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding-left: 10px;
+  padding-right: 5px;
+  max-width: 75%;
+}
+.text-Input-Color:focus {
+  outline: none;
+}
 .current-Text-Color {
   display: flex;
   align-items: center;
   margin: auto;
+  margin-top: 0px;
   margin-left: 0;
   margin-bottom: 10px;
 }
 .current-Text-Color > p {
   margin: 0;
+  padding: 0px;
   padding-left: 10px;
 }
 .current-Text-Color > div {
