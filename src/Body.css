@@ -176,10 +176,10 @@
   width: 50%;
   max-width: 50%;
   min-width: 50%;
-  height: 20%;
-  max-height: 20%;
-  min-height: 20%;
-  background-color: #3a3e49;
+  height: 100%;
+  max-height: 100%;
+  min-height: 100%;
+  background-color: #5a5e69b2;
   padding-left: 5px;
   border-radius: 4px;
   margin: auto;
@@ -194,6 +194,12 @@
   padding-left: 10px;
   padding-right: 5px;
   max-width: 75%;
+  height: 65%;
+  text-align: center;
+ 
+}
+.text-Input-Color::placeholder{
+  color: white;
 }
 .text-Input-Color:focus {
   outline: none;
@@ -205,16 +211,14 @@
   margin-top: 0px;
   margin-left: 0;
   margin-bottom: 10px;
+  height: 30px;
+  background-color: #5a5e69b2;
+  border-radius: 5px;
+  padding-left: 5px;
+
 }
-.current-Text-Color > p {
-  margin: 0;
-  padding: 0px;
-  padding-left: 10px;
-}
-.current-Text-Color > div {
-  width: 20px;
-  height: 20px;
-}
+
+
 .edit-Text-color-Div {
   width: 18vw;
   height: 30px;
@@ -228,6 +232,7 @@
   cursor: pointer;
   margin: auto;
   margin-left: 0px;
+  margin-right: 20px;
 }
 .edit-Text-color:hover {
   width: 20px;

@@ -22,13 +22,12 @@ function TextEditNav(props){
                 </div>
                 <div className='nav-Edit-text'>
                     <p>TEXT-COLOR</p>
-                    <div className='text-Input-Color-Div'>
-                        <input className='text-Input-Color'></input>
-
-                    </div>
+                    
                     <div className='current-Text-Color'>
-                        <div className='edit-Text-color' style={{backgroundColor: props.currentColorset}} ></div>
-                        <p>{props.currentColorset}</p>
+                        <div className='edit-Text-color 'style={{backgroundColor: props.currentColorset,width:'20px',height:'20px'}} ></div>
+                        <div className='text-Input-Color-Div'>
+                            <input className='text-Input-Color' placeholder={props.currentColorset}></input>
+                        </div>
                     </div>
                     <div className='edit-Text-color-Div'>
                         <div onClick={changeColor}  className='edit-Text-color' style={{backgroundColor: "white"}} ></div>
@@ -134,7 +133,8 @@ function TextExtended(props){
                     id={myinputid}
                     onFocus={onFocus}
                     onBlur={onBlur}
-                >Sample Text</textarea>
+                    defaultValue={'Sample Text'}
+                ></textarea>
                 <div className='myinputdividhandler1' id={myidhandler1}><BsArrowsMove/></div>
                 <div className='myinputdividhandler' onMouseEnter={moveinpudiv} id={myidhandler} ></div>
             </div>
