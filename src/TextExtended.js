@@ -13,6 +13,15 @@ function TextEditNav(props){
         document.getElementById('textinputcolorid').value = null
         document.getElementById('textinputcolorid').value += textColor
     }
+
+    function changeColorWithText(evt){
+        evt.preventDefault()
+        var textColortext = document.getElementById('textinputcolorid').value
+        props.textinput.style.color = textColortext
+        console.log(document.getElementById('textinputcolorid').value)
+        props.textinput.focus()
+        
+    }
     return(
         <div>
             <div className='nav-Edit-header'>
@@ -30,7 +39,7 @@ function TextEditNav(props){
                             <div className='edit-Text-color 'style={{backgroundColor: props.currentColorset,width:'20px',height:'20px'}} ></div>
                             <input id='textinputcolorid' className='text-Input-Color' defaultValue={props.currentColorset}></input>
                         </div>
-                        <button className='set-Color-Btn'>Set</button>
+                        <div className='set-Color-Btn' onClick={changeColorWithText}>Set</div>
                     </div>
                     <div className='edit-Text-color-Div'>
                         <div onClick={changeColor}  className='edit-Text-color' style={{backgroundColor: "white"}} ></div>
