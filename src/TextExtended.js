@@ -28,6 +28,7 @@ function TextEditNav(props){
                         <div className='text-Input-Color-Div'>
                             <input className='text-Input-Color' placeholder={props.currentColorset}></input>
                         </div>
+                        <button></button>
                     </div>
                     <div className='edit-Text-color-Div'>
                         <div onClick={changeColor}  className='edit-Text-color' style={{backgroundColor: "white"}} ></div>
