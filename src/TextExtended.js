@@ -10,6 +10,8 @@ function TextEditNav(props){
         props.textinput.focus()
         var textColor = evt.target.style.backgroundColor
         props.textinput.style.color = textColor
+        document.getElementById('textinputcolorid').value = null
+        document.getElementById('textinputcolorid').value += textColor
     }
     return(
         <div>
@@ -24,11 +26,11 @@ function TextEditNav(props){
                     <p>TEXT-COLOR</p>
                     
                     <div className='current-Text-Color'>
-                        <div className='edit-Text-color 'style={{backgroundColor: props.currentColorset,width:'20px',height:'20px'}} ></div>
                         <div className='text-Input-Color-Div'>
-                            <input className='text-Input-Color' placeholder={props.currentColorset}></input>
+                            <div className='edit-Text-color 'style={{backgroundColor: props.currentColorset,width:'20px',height:'20px'}} ></div>
+                            <input id='textinputcolorid' className='text-Input-Color' defaultValue={props.currentColorset}></input>
                         </div>
-                        <button></button>
+                        <button className='set-Color-Btn'>Set</button>
                     </div>
                     <div className='edit-Text-color-Div'>
                         <div onClick={changeColor}  className='edit-Text-color' style={{backgroundColor: "white"}} ></div>
@@ -79,27 +81,22 @@ function TextExtended(props){
             }
             textinput.addEventListener('keyup', deleteinput)
             
-            function setColor(){ 
+            function setColorandNav(){ 
                 if (textinput.style.color === '') {textinput.style.color='black'}
+                props.setEditType(()=>{
+                    var currentColor =  textinput.style.color
+                    return(
+                        <TextEditNav
+                            textinput = {textinput}
+                            currentColorset = {currentColor}
+                        />
+                    )
+                })
+                document.getElementById('textinputcolorid').value = null
+                document.getElementById('textinputcolorid').value += textinput.style.color   
             }
-            setColor()
-
-
-            props.setEditType(()=>{
-                var currentColor =  textinput.style.color
-                console.log(currentColor)
-                return(
-                    <TextEditNav
-                        textinput= {textinput}
-                        currentColorset = {currentColor}
-                        setColor = {setColor}
-                    />
-                )
-            })
-            
-            
+            setColorandNav()  
            
-            
         };
         function onBlur(evt){
             var clicked = evt.target;

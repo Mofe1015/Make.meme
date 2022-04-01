@@ -179,7 +179,6 @@
   margin-left: 0;
   margin-bottom: 10px;
   height: 30px;
-  background-color: #252935;
   border-radius: 5px;
   padding-left: 5px;
 
@@ -198,19 +197,22 @@
   padding-left: 5px;
   border-radius: 4px;
   margin: auto;
+  margin-right: 0px ;
   margin-left: 0px;
+  align-items: center;
 }
 .text-Input-Color {
   margin-top: auto;
   margin-bottom: auto;
+  margin-left: 0px;
   background-color: transparent;
   border: none;
   color: white;
   padding-left: 10px;
   padding-right: 5px;
-  max-width: 75%;
+  max-width: 50%;
   height: 65%;
-  text-align: center;
+  text-align: left;
  
 }
 
@@ -220,7 +222,22 @@
 .text-Input-Color:focus {
   outline: none;
 }
-
+.set-Color-Btn {
+  background-color: #7795f8a9;
+  width: 15%;
+  height: 100%;
+  min-width: 15%;
+  min-height: 100%;
+  margin: auto;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  color: white;
+}
 
 .edit-Text-color-Div {
   width: 18vw;
@@ -233,9 +250,8 @@
   height: 15px;
   border-radius: 50%;
   cursor: pointer;
-  margin: auto;
   margin-left: 0px;
-  margin-right: 20px;
+  margin-right: 10px;
 }
 .edit-Text-color:hover {
   width: 20px;
