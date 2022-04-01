@@ -170,6 +170,21 @@
   padding: 0px;
   font-size: 15px;
 }
+
+.current-Text-Color {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  margin-top: 0px;
+  margin-left: 0;
+  margin-bottom: 10px;
+  height: 30px;
+  background-color: #252935;
+  border-radius: 5px;
+  padding-left: 5px;
+
+}
+
 .text-Input-Color-Div{
   display: flex;
   flex-direction: row;
@@ -179,7 +194,7 @@
   height: 100%;
   max-height: 100%;
   min-height: 100%;
-  background-color: #5a5e69b2;
+  background-color: #252935;
   padding-left: 5px;
   border-radius: 4px;
   margin: auto;
@@ -198,24 +213,12 @@
   text-align: center;
  
 }
+
 .text-Input-Color::placeholder{
   color: white;
 }
 .text-Input-Color:focus {
   outline: none;
-}
-.current-Text-Color {
-  display: flex;
-  align-items: center;
-  margin: auto;
-  margin-top: 0px;
-  margin-left: 0;
-  margin-bottom: 10px;
-  height: 30px;
-  background-color: #5a5e69b2;
-  border-radius: 5px;
-  padding-left: 5px;
-
 }
 
 
