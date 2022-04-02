@@ -29,7 +29,7 @@ function TextEditNav(props){
             </div>
             <div className='nav-Edit-body'>
                 <div className='nav-Edit-text'>
-                    <p>FONT</p>
+                    <p>FONTs</p>
                     
                 </div>
                 <div className='nav-Edit-text'>
