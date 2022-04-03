@@ -6,7 +6,7 @@ import {  BsArrowsMove } from "react-icons/bs";
 import { MdOutlineArrowBackIosNew, MdClose } from "react-icons/md";
 
 function TextEditNav(props){
-    
+    console.log(props.textinput.style.fontFamily)
     function changeColor(evt){
         props.textinput.focus()
         var textColor = evt.target.style.backgroundColor
@@ -21,7 +21,6 @@ function TextEditNav(props){
         props.textinput.style.color = textColortext
         console.log(document.getElementById('textinputcolorid').value)
         props.textinput.focus()
-        
     }
     return(
         <div>
@@ -32,7 +31,7 @@ function TextEditNav(props){
                 <div className='nav-Edit-text'>
                     <p>FONT</p>
 
-                    <DropdownButton className='text-Font-Dropdown' id="dropdown-basic-button" title="Dropdown button">
+                    <DropdownButton id="dropdown-basic-button" title={props.textinput.style.fontFamily}>
                         <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
                         <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
                         <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
@@ -238,11 +237,10 @@ function TextExtended(props){
             </div>
             <div className='nav-Extend-Body'>
                 <form className='nav-Extend-Body'>
-                    <div className='font-type' onClick={setFontType} >Add Header Text</div>
+                    <div className='font-type' onClick={setFontType} style={{fontFamily:'Arial'}} >Add Header Text</div>
                     <div className='font-type'onClick={setFontType} style={{fontFamily:'Impact, fantasy'}}>Add fantasy Text</div>
                     <div className='font-type'onClick={setFontType} style={{fontFamily:'Courier, monospace'}}>Add monospace Text</div>
-                   
-                    <button className='add-Text-Btn' type='button' onClick={addText}>Add Text</button>    
+                    <button className='add-Text-Btn' type='button' onClick={setFontType} style={{fontFamily:'Arial'}}>Add Text</button>    
                 </form>
                 
             </div>
