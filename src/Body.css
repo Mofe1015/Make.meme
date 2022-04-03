@@ -171,6 +171,7 @@
   font-size: 15px;
 }
 #dropdown-basic-button{
+  width: 80%;
   background-color: #252935;
   border: none !important;
   outline: none;
