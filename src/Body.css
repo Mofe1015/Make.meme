@@ -170,6 +170,18 @@
   padding: 0px;
   font-size: 15px;
 }
+#dropdown-basic-button{
+  background-color: #252935;
+  border: none !important;
+  outline: none;
+}
+#dropdown-basic-button:focus{
+  box-shadow: none;
+}
+
+#dropdown-basic-button:hover{
+  background-color:#444750;
+}
 
 .current-Text-Color {
   display: flex;
@@ -458,6 +470,7 @@
   background-color: transparent;
   border: dashed 1px black;
   color: black;
+  resize: both;
 }
 
 .add-Text-input:focus {

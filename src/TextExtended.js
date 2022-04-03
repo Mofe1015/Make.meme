@@ -5,8 +5,6 @@ import './App.css';
 import {  BsArrowsMove } from "react-icons/bs";
 import { MdOutlineArrowBackIosNew, MdClose } from "react-icons/md";
 
-
-let changeColor
 function TextEditNav(props){
     
     function changeColor(evt){
@@ -34,7 +32,7 @@ function TextEditNav(props){
                 <div className='nav-Edit-text'>
                     <p>FONT</p>
 
-                    <DropdownButton id="dropdown-basic-button" title="Dropdown button">
+                    <DropdownButton className='text-Font-Dropdown' id="dropdown-basic-button" title="Dropdown button">
                         <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
                         <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
                         <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
