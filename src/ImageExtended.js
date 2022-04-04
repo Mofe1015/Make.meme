@@ -5,14 +5,14 @@ import memesData from "./memesData.js"
 import React from 'react';
 
 
-function ImageEditNav(){
+function ImageEditNav(props){
     return(
         <div>
             <div className='nav-Edit-header'>
                 Image
             </div>
-            <div className='nav-Edit-body'>
-                {document.getElementById('imageid').value}
+            <div className='nav-Edit-body'>  
+                <p>{props.imgname}</p>
             </div>
         </div>
     )
@@ -22,14 +22,11 @@ function ImageEditNav(){
  function ImageExtended (props){
 
     function imageOnCLick(evt){
-        var imageid = evt.target.id
-        var imageName = evt.target.value
-        console.log(imageName)
-        
+        var imageName = evt.target.alt
         props.setEditType(()=>{
             return(
                 <ImageEditNav
-                    imgname =  {document.getElementById('imageid').value}
+                    imgname =  {imageName}
                 />
             )
         })
@@ -45,7 +42,7 @@ function ImageEditNav(){
             onClick={imageOnCLick}
             src={ memesArray[randomNumber].url}
             className="meme-image"
-            value={memesArray[randomNumber].name}
+            alt={memesArray[randomNumber].name}
             />
         props.setMemeData(prevMemeData => {
             
