@@ -7,7 +7,7 @@ import { MdOutlineArrowBackIosNew, MdClose } from "react-icons/md";
 
 function TextEditNav(props){
     console.log(props.textinput.style.fontFamily)
-    function changeColor(evt){
+    function changeColorWithBtn(evt){
         props.textinput.focus()
         var textColor = evt.target.style.backgroundColor
         props.textinput.style.color = textColor
@@ -24,7 +24,6 @@ function TextEditNav(props){
     }
 
     function setNewFont(evt){
-        console.log(evt.target.style.fontFamily)
         props.textinput.style.fontFamily = evt.target.style.fontFamily
         props.textinput.focus()
     }
@@ -59,11 +58,11 @@ function TextEditNav(props){
                         <div className='set-Color-Btn' onClick={changeColorWithText}>Set</div>
                     </div>
                     <div className='edit-Text-color-Div'>
-                        <div onClick={changeColor}  className='edit-Text-color' style={{backgroundColor: "white"}} ></div>
-                        <div onClick={changeColor} className='edit-Text-color' style={{backgroundColor: "red"}} ></div>
-                        <div onClick={changeColor} className='edit-Text-color' style={{backgroundColor: "yellow"}} ></div>
-                        <div onClick={changeColor} className='edit-Text-color' style={{backgroundColor: "green"}} ></div>
-                        <div onClick={changeColor} className='edit-Text-color' style={{backgroundColor: "blue"}} ></div>
+                        <div onClick={changeColorWithBtn}  className='edit-Text-color' style={{backgroundColor: "white"}} ></div>
+                        <div onClick={changeColorWithBtn} className='edit-Text-color' style={{backgroundColor: "red"}} ></div>
+                        <div onClick={changeColorWithBtn} className='edit-Text-color' style={{backgroundColor: "yellow"}} ></div>
+                        <div onClick={changeColorWithBtn} className='edit-Text-color' style={{backgroundColor: "green"}} ></div>
+                        <div onClick={changeColorWithBtn} className='edit-Text-color' style={{backgroundColor: "blue"}} ></div>
                     </div>
                 </div>
             </div>

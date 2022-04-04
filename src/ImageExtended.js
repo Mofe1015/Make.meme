@@ -12,7 +12,7 @@ function ImageEditNav(){
                 Image
             </div>
             <div className='nav-Edit-body'>
-                Image body
+                {document.getElementById('imageid').value}
             </div>
         </div>
     )
@@ -23,12 +23,14 @@ function ImageEditNav(){
 
     function imageOnCLick(evt){
         var imageid = evt.target.id
-        var image = document.getElementById(imageid)
-        console.log(image)
+        var imageName = evt.target.value
+        console.log(imageName)
         
         props.setEditType(()=>{
             return(
-                <ImageEditNav/>
+                <ImageEditNav
+                    imgname =  {document.getElementById('imageid').value}
+                />
             )
         })
     }
@@ -38,7 +40,13 @@ function ImageEditNav(){
     function getMemeImage() {
         const memesArray = memesData.data.memes
         const randomNumber = Math.floor(Math.random() * memesArray.length)
-        var memeimage = <img id='imageid' onClick={imageOnCLick} src={ memesArray[randomNumber].url} className="meme-image" />
+        var memeimage = <img 
+            id='imageid'
+            onClick={imageOnCLick}
+            src={ memesArray[randomNumber].url}
+            className="meme-image"
+            value={memesArray[randomNumber].name}
+            />
         props.setMemeData(prevMemeData => {
             
             return {
