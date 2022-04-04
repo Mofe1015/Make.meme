@@ -175,6 +175,9 @@
   background-color: #252935;
   border: none !important;
   outline: none;
+  display: flex;
+  align-items: center;
+
 }
 #dropdown-basic-button:focus{
   box-shadow: none;

@@ -32,9 +32,9 @@ function TextEditNav(props){
                     <p>FONT</p>
 
                     <DropdownButton id="dropdown-basic-button" title={props.textinput.style.fontFamily}>
-                        <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                        <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                        <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                        <Dropdown.Item style={{fontFamily:'Impact, fantasy'}}> fantasy Impact</Dropdown.Item>
+                        <Dropdown.Item style={{fontFamily:'Courier, monospace'}}> Courier monospace</Dropdown.Item>
+                        <Dropdown.Item style={{fontFamily:'Arial'}} >Arial</Dropdown.Item>
                     </DropdownButton>
                     
                 </div>
