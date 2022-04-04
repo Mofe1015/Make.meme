@@ -22,6 +22,12 @@ function TextEditNav(props){
         console.log(document.getElementById('textinputcolorid').value)
         props.textinput.focus()
     }
+
+    function setNewFont(evt){
+        console.log(evt.target.style.fontFamily)
+        props.textinput.style.fontFamily = evt.target.style.fontFamily
+        props.textinput.focus()
+    }
     return(
         <div>
             <div className='nav-Edit-header'>
@@ -31,10 +37,14 @@ function TextEditNav(props){
                 <div className='nav-Edit-text'>
                     <p>FONT</p>
 
-                    <DropdownButton id="dropdown-basic-button" title={props.textinput.style.fontFamily}>
-                        <Dropdown.Item style={{fontFamily:'Impact, fantasy'}}> fantasy Impact</Dropdown.Item>
-                        <Dropdown.Item style={{fontFamily:'Courier, monospace'}}> Courier monospace</Dropdown.Item>
-                        <Dropdown.Item style={{fontFamily:'Arial'}} >Arial</Dropdown.Item>
+                    <DropdownButton
+                     id="dropdown-basic-button"
+                     style={{fontFamily: props.textinput.style.fontFamily}}
+                     title={props.textinput.style.fontFamily}
+                    >
+                        <Dropdown.Item onClick={setNewFont} style={{fontFamily:'Impact, fantasy'}}>Impact, fantasy</Dropdown.Item>
+                        <Dropdown.Item onClick={setNewFont} style={{fontFamily:'Courier, monospace'}}> Courier, monospace</Dropdown.Item>
+                        <Dropdown.Item onClick={setNewFont} style={{fontFamily:'Arial'}} >Arial</Dropdown.Item>
                     </DropdownButton>
                     
                 </div>
