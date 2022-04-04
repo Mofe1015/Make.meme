@@ -19,7 +19,7 @@ function ImageEditNav(props){
 };
 
 
- function ImageExtended (props){
+function ImageExtended (props){
 
     function imageOnCLick(evt){
         var imageName = evt.target.alt
@@ -50,6 +50,13 @@ function ImageEditNav(props){
                 ...prevMemeData,
                 memeImage:memeimage
             }
+        })
+        props.setEditType(()=>{
+            return(
+                <ImageEditNav
+                    imgname =  {memesArray[randomNumber].name}
+                />
+            )
         })
     }
     
