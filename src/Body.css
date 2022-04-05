@@ -159,7 +159,24 @@
 .nav-Edit-body > p {
   margin: auto;
   margin-top: 30px;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
+}
+.nav-Edit-deleteBtn{
+  width: 80%;
+  height: 30px;
+  background-color: #252935;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+}
+.nav-Edit-deleteBtn:hover{
+  background-color: #444750;
 }
 .nav-Edit-text {
   background-color: transparent;

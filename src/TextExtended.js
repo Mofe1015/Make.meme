@@ -3,7 +3,7 @@ import { Dropdown, DropdownButton } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 import {  BsArrowsMove } from "react-icons/bs";
-import { MdOutlineArrowBackIosNew, MdClose } from "react-icons/md";
+import { MdOutlineArrowBackIosNew, MdClose, MdDelete } from "react-icons/md";
 
 function TextEditNav(props){
     console.log(props.textinput.style.fontFamily)
@@ -26,6 +26,10 @@ function TextEditNav(props){
     function setNewFont(evt){
         props.textinput.style.fontFamily = evt.target.style.fontFamily
         props.textinput.focus()
+        
+    }
+    function deleteinputBtn(){
+        props.textinput.remove()
     }
     return(
         <div>
@@ -64,6 +68,9 @@ function TextEditNav(props){
                         <div onClick={changeColorWithBtn} className='edit-Text-color' style={{backgroundColor: "green"}} ></div>
                         <div onClick={changeColorWithBtn} className='edit-Text-color' style={{backgroundColor: "blue"}} ></div>
                     </div>
+
+                    <button className='nav-Edit-deleteBtn' onClick={deleteinputBtn}><MdDelete style={{width:'25px', height:"25px"}}/>Delete</button>
+
                 </div>
             </div>
         </div>
@@ -102,8 +109,8 @@ function TextExtended(props){
             document.getElementById('handler1'+clicknum).style.display = 'flex'
             document.getElementById('handler'+clicknum).style.display = 'flex'
             function deleteinput(e){
-               if (e.keyCode === 46) {textinput.remove()}
-            }
+                if (e.keyCode === 46) {textinput.remove()}
+             }
             textinput.addEventListener('keyup', deleteinput)
             
             function setColorandNav(){ 
@@ -114,6 +121,7 @@ function TextExtended(props){
                         <TextEditNav
                             textinput = {textinput}
                             currentColorset = {currentColor}
+                            deleteinput = {deleteinput}
                         />
                     )
                 })

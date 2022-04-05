@@ -1,6 +1,6 @@
 import './Body.css';
 import { GoSearch } from "react-icons/go";
-import { MdOutlineArrowBackIosNew, MdClose } from "react-icons/md";
+import { MdOutlineArrowBackIosNew, MdClose, MdDelete } from "react-icons/md";
 import memesData from "./memesData.js"
 import React from 'react';
 
@@ -16,7 +16,7 @@ function ImageEditNav(props){
             </div>
             <div className='nav-Edit-body'>  
                 <p>{props.imgname}</p>
-                <button onClick={deleteImage}>Delete</button>
+                <button className='nav-Edit-deleteBtn' onClick={deleteImage}><MdDelete style={{width:'25px', height:"25px"}}/>Delete</button>
             </div>
         </div>
     )
