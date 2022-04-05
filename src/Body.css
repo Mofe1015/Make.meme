@@ -158,8 +158,9 @@
 }
 .nav-Edit-body > p {
   margin: auto;
-  margin-top: 30px;
-  margin-bottom: 0px;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 50px;
 }
 .nav-Edit-deleteBtn{
   width: 80%;
@@ -171,13 +172,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: auto;
+  margin-left: 10PX;
   margin-right: auto;
-  margin-top: 30px;
+  margin-top: 5px;
 }
 .nav-Edit-deleteBtn:hover{
   background-color: #444750;
 }
+
+.nav-Edit-Img-p {
+  color: grey;
+  margin: 0px;
+  margin-bottom: 5px !important;
+  padding: 0px;
+  font-size: 15px;
+}
+
 .nav-Edit-text {
   background-color: transparent;
   width: 18vw;
@@ -193,6 +203,7 @@
   padding: 0px;
   font-size: 15px;
 }
+
 #dropdown-basic-button{
   width: 80%;
   background-color: #252935;
@@ -237,7 +248,7 @@
   border-radius: 4px;
   margin: auto;
   margin-right: 0px ;
-  margin-left: 0px;
+  margin-left: -5px;
   align-items: center;
 }
 .text-Input-Color {

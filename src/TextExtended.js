@@ -68,10 +68,10 @@ function TextEditNav(props){
                         <div onClick={changeColorWithBtn} className='edit-Text-color' style={{backgroundColor: "green"}} ></div>
                         <div onClick={changeColorWithBtn} className='edit-Text-color' style={{backgroundColor: "blue"}} ></div>
                     </div>
-
-                    <button className='nav-Edit-deleteBtn' onClick={deleteinputBtn}><MdDelete style={{width:'25px', height:"25px"}}/>Delete</button>
-
                 </div>
+                <p className='nav-Edit-Img-p'>LAYER</p> 
+                <button className='nav-Edit-deleteBtn' onClick={deleteinputBtn}><MdDelete style={{width:'25px', height:"25px"}}/>Delete</button>
+
             </div>
         </div>
     )

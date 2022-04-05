@@ -14,8 +14,10 @@ function ImageEditNav(props){
             <div className='nav-Edit-header'>
                 Image
             </div>
-            <div className='nav-Edit-body'>  
+            <div className='nav-Edit-body'> 
+                <p className='nav-Edit-Img-p'>IMAGE-DETAILS</p> 
                 <p>{props.imgname}</p>
+                <p className='nav-Edit-Img-p'>LAYER</p> 
                 <button className='nav-Edit-deleteBtn' onClick={deleteImage}><MdDelete style={{width:'25px', height:"25px"}}/>Delete</button>
             </div>
         </div>
