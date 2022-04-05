@@ -6,6 +6,9 @@ import React from 'react';
 
 
 function ImageEditNav(props){
+    function deleteImage(){
+        document.getElementById('imageid').style.display = "none"
+    }
     return(
         <div>
             <div className='nav-Edit-header'>
@@ -13,6 +16,7 @@ function ImageEditNav(props){
             </div>
             <div className='nav-Edit-body'>  
                 <p>{props.imgname}</p>
+                <button onClick={deleteImage}>Delete</button>
             </div>
         </div>
     )
@@ -58,6 +62,7 @@ function ImageExtended (props){
                 />
             )
         })
+        document.getElementById('imageid').style.display = "block"
     }
     
     return(
