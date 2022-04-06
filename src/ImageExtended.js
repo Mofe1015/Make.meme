@@ -1,11 +1,12 @@
 import './Body.css';
 import { GoSearch } from "react-icons/go";
 import { MdOutlineArrowBackIosNew, MdClose, MdDelete } from "react-icons/md";
-import memesData from "./memesData.js"
 import React from 'react';
 
 
 function ImageEditNav(props){
+   
+
     function deleteImage(){
         document.getElementById('imageid').style.display = "none"
     }
@@ -27,6 +28,14 @@ function ImageEditNav(props){
 
 function ImageExtended (props){
 
+    const [allMemes, setAllMemes] = React.useState([])
+    
+    React.useEffect(() => {
+        fetch("https://api.imgflip.com/get_memes")
+            .then(res => res.json())
+            .then(data => setAllMemes(data.data.memes))
+    }, [])
+
     function imageOnCLick(evt){
         var imageName = evt.target.alt
         props.setEditType(()=>{
@@ -40,15 +49,15 @@ function ImageExtended (props){
     function clearSearchField(){
         document.getElementById('searchimageinputid').value= null; 
     };
+    
     function getMemeImage() {
-        const memesArray = memesData.data.memes
-        const randomNumber = Math.floor(Math.random() * memesArray.length)
+        const randomNumber = Math.floor(Math.random() * allMemes.length)
         var memeimage = <img 
             id='imageid'
             onClick={imageOnCLick}
-            src={ memesArray[randomNumber].url}
+            src={ allMemes[randomNumber].url}
             className="meme-image"
-            alt={memesArray[randomNumber].name}
+            alt={allMemes[randomNumber].name}
             />
         props.setMemeData(prevMemeData => {
             
@@ -60,11 +69,11 @@ function ImageExtended (props){
         props.setEditType(()=>{
             return(
                 <ImageEditNav
-                    imgname =  {memesArray[randomNumber].name}
+                    imgname =  {allMemes[randomNumber].name}
                 />
             )
         })
-        document.getElementById('imageid').style.display = "block"
+        document.getElementById('imageid').style.display = "flex"
     }
     
     return(

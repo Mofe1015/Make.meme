@@ -7,7 +7,7 @@ function App() {
     <>
       <header>
            <div className='App-header'>
-              Meme.Make
+              Make.Meme
            </div>
       </header>
 

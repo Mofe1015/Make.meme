@@ -64,7 +64,7 @@ function TextEditNav(props){
                     </div>
                     <div className='edit-Text-color-Div'>
                         <div onClick={changeColorWithBtn} className='edit-Text-color' style={{backgroundColor: "black"}} ></div>
-                        <div onClick={changeColorWithBtn}  className='edit-Text-color' style={{backgroundColor: "white"}} ></div>
+                        <div onClick={changeColorWithBtn} className='edit-Text-color' style={{backgroundColor: "white"}} ></div>
                         <div onClick={changeColorWithBtn} className='edit-Text-color' style={{backgroundColor: "red"}} ></div>
                         <div onClick={changeColorWithBtn} className='edit-Text-color' style={{backgroundColor: "yellow"}} ></div>
                         <div onClick={changeColorWithBtn} className='edit-Text-color' style={{backgroundColor: "green"}} ></div>
