@@ -1,13 +1,13 @@
-# RATED--repo
+# Make.Meme
 
+<img src="gitimages/mememakerimgorivew.png" width="100%" margin-bottom = "40px" >
 <img src="gitimages/mememakerimgorivew1.png" width="100%" margin-bottom = "40px" >
 
 ## VIDEO PREVIEW!!
-https://user-images.githubusercontent.com/70088500/162044425-c1842671-eff9-4182-897f-f1ad42902c42.mov
 
+https://user-images.githubusercontent.com/70088500/157361380-e34a7b7f-da72-4902-a7f9-c8b8706a71bc.mov
 
-
-## Check out my latest project >> [ RATED WEBSITE](https://github.com/Mofe1015/RatedRepo)
+## Check out my latest project >> [ Meme Maker WEBAPP](https://Mofe1015.github.io/Make.meme)
 
 This ia a rating website made with REACT, JAVASCRIPT, CSS, HTML.
 It's just a simple FRONTEND project for implementing the basic workings of REACT.
@@ -41,6 +41,3 @@ If you encounter any bugs or are facing any issues with the code, please don't h
 email : mofeomotosho@gmail.com
 
 ### MOFE
-
-
-
