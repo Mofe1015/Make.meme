@@ -45,6 +45,7 @@ function TextEditNav(props){
                      style={{fontFamily: props.textinput.style.fontFamily}}
                      title={props.textinput.style.fontFamily}
                     >
+                        <Dropdown.Item onClick={setNewFont} style={{fontFamily:'Cursive'}}>Chancery L, cursive</Dropdown.Item>
                         <Dropdown.Item onClick={setNewFont} style={{fontFamily:'Impact, fantasy'}}>Impact, fantasy</Dropdown.Item>
                         <Dropdown.Item onClick={setNewFont} style={{fontFamily:'Courier, monospace'}}> Courier, monospace</Dropdown.Item>
                         <Dropdown.Item onClick={setNewFont} style={{fontFamily:'Arial'}} >Arial</Dropdown.Item>
@@ -62,6 +63,7 @@ function TextEditNav(props){
                         <div className='set-Color-Btn' onClick={changeColorWithText}>Set</div>
                     </div>
                     <div className='edit-Text-color-Div'>
+                        <div onClick={changeColorWithBtn} className='edit-Text-color' style={{backgroundColor: "black"}} ></div>
                         <div onClick={changeColorWithBtn}  className='edit-Text-color' style={{backgroundColor: "white"}} ></div>
                         <div onClick={changeColorWithBtn} className='edit-Text-color' style={{backgroundColor: "red"}} ></div>
                         <div onClick={changeColorWithBtn} className='edit-Text-color' style={{backgroundColor: "yellow"}} ></div>
@@ -254,9 +256,10 @@ function TextExtended(props){
             </div>
             <div className='nav-Extend-Body'>
                 <form className='nav-Extend-Body'>
-                    <div className='font-type' onClick={setFontType} style={{fontFamily:'Arial'}} >Add Header Text</div>
+                    <div className='font-type'onClick={setFontType} style={{fontFamily:'Arial'}} >Add Header Text</div>
                     <div className='font-type'onClick={setFontType} style={{fontFamily:'Impact, fantasy'}}>Add fantasy Text</div>
                     <div className='font-type'onClick={setFontType} style={{fontFamily:'Courier, monospace'}}>Add monospace Text</div>
+                    <div className='font-type'onClick={setFontType} style={{fontFamily:'cursive'}}>Add cursive Text</div>
                     <button className='add-Text-Btn' type='button' onClick={setFontType} style={{fontFamily:'Arial'}}>Add Text</button>    
                 </form>
                 
