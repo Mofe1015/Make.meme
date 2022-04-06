@@ -5,7 +5,7 @@
 
 ## VIDEO PREVIEW!!
 
-https://user-images.githubusercontent.com/70088500/157361380-e34a7b7f-da72-4902-a7f9-c8b8706a71bc.mov
+https://user-images.githubusercontent.com/70088500/162045014-406af552-bd1a-49ff-8700-7f63a11369b0.mov
 
 ## Check out my latest project >> [ Meme Maker WEBAPP](https://Mofe1015.github.io/Make.meme)
 
@@ -14,6 +14,10 @@ It's just a simple FRONTEND project for implementing the basic workings of REACT
 Couple of the data is mapped from a javascript list.
 
 So far, Auto Scroll and soe minor features have been implemented. I also hope to integrate Api usage, User accouts, etc.
+
+
+
+
 
 ## NOTICE!!
 
