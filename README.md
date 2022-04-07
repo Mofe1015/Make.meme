@@ -9,19 +9,15 @@ https://user-images.githubusercontent.com/70088500/162045014-406af552-bd1a-49ff-
 
 ## Check out my latest project >> [ Meme Maker WEBAPP](https://Mofe1015.github.io/Make.meme)
 
-This ia a rating website made with REACT, JAVASCRIPT, CSS, HTML.
-It's just a simple FRONTEND project for implementing the basic workings of REACT.
-Couple of the data is mapped from a javascript list.
+This is a fully functional meme making web app made with REACT, JAVASCRIPT, CSS, HTML.
+implementing the basic workings of REACT with features like state, effect and api calls.
+The meme images are called from an API and text inputs have resize, drag, font-type and font-color changing functionality .
 
-So far, Auto Scroll and soe minor features have been implemented. I also hope to integrate Api usage, User accouts, etc.
-
-
-
-
+So far, The web app is mobile responsive, certain features don't work on mobile but will be implented soon .
 
 ## NOTICE!!
 
-    This is just a Project WebSite, certain  features may not be  functional
+    This is just a Project WebApp, certain  features may not be  functional
 
 ## Design ❄👌
 
