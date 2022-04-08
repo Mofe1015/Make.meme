@@ -11,7 +11,7 @@ https://user-images.githubusercontent.com/70088500/162045014-406af552-bd1a-49ff-
 
 This is a fully functional meme making web app made with REACT, JAVASCRIPT, CSS, HTML.
 implementing the basic workings of REACT with features like state, effect and api calls.
-The meme images are called from an API and text inputs have resize, drag, font-type and font-color changing functionality .
+The meme images are called from an API and text inputs have resize, drag, font-type and font-color changing functionality.
 
 So far, The web app is mobile responsive, certain features don't work on mobile but will be implented soon .
 
@@ -21,8 +21,8 @@ So far, The web app is mobile responsive, certain features don't work on mobile 
 
 ## Design ❄👌
 
-- Front End: HTML, CSS, Vanilla JS, REACT
-- Back End: JavaScript
+- Front End: HTML, CSS, Vanilla JS, REACTjs
+- Back End: JavaScript, API
 
 ## Building 🏢🚀
 
