@@ -542,6 +542,10 @@
     max-width: 275px;
     max-height: 275px;
   }
+  .add-Text-input {
+    width: 200px;
+    height: 50px;
+  }
   .nav-Extend-backIcon {
     display: none;
   }
