@@ -39,6 +39,6 @@ Feature requests, issues, pull requests and questions are welcome.
 
 If you encounter any bugs or are facing any issues with the code, please don't hesitate to reach out to me.
 
-email : mofeomotosho@gmail.com
+email : mofeomotosho8@gmail.com
 
 ### MOFE
